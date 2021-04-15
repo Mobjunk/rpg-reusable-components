@@ -1,0 +1,968 @@
+fileFormatVersion: 2
+guid: 6cc1382b0e8d94d48aa70ada97fb3d0f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: AAA_Male_Feet
+    100002: AAA_Male_Hands
+    100004: AAA_Male_Head
+    100006: AAA_Male_Legs
+    100008: AAA_Male_Torso
+    100010: Arm.L
+    100012: Arm.R
+    100014: Armature
+    100016: Chest
+    100018: //RootNode
+    100020: Foot.L
+    100022: Foot.L_end
+    100024: Foot.R
+    100026: Foot.R_end
+    100028: ForeArm.L
+    100030: ForeArm.R
+    100032: Hand.L
+    100034: Hand.L_end
+    100036: Hand.R
+    100038: Hand.R_end
+    100040: Head
+    100042: Head_end
+    100044: Hip
+    100046: Leg.L
+    100048: Leg.R
+    100050: Neck
+    100052: Shoulder.L
+    100054: Shoulder.R
+    100056: Spine
+    100058: Thigh.L
+    100060: Thigh.R
+    100062: Plane
+    100064: Beard
+    100066: Mesh_Body_Platebody_M
+    100068: Mesh_Legs_Platelegs_M
+    100070: Mesh_Feet_LeatherBoots_M
+    100072: Mesh_Hair5_M
+    100074: AAA_Female_Feet
+    100076: AAA_Female_Hands
+    100078: AAA_Female_Head
+    100080: AAA_Female_Legs
+    100082: AAA_Female_Torso
+    100084: Mesh_Body_Platebody_F
+    100086: Mesh_Feet_LeatherBoots_F
+    100088: Mesh_Hair2_F
+    100090: Mesh_Legs_Platelegs_F
+    100092: Mesh_Body_DwarfPlatebody_F
+    100094: Mesh_Body_DwarfPlatebody_M
+    100096: Mesh_Feet_Dwarf_LeatherBoots_F
+    100098: Mesh_Feet_Dwarf_LeatherBoots_M
+    100100: Mesh_Body_Dwarf_Platebody_F
+    100102: Mesh_Body_Dwarf_Platebody_M
+    100104: Mesh_Hair1_Dwarf_M
+    100106: Mesh_Hair2_Dwarf_F
+    100108: Mesh_Hair2_Dwarf_M
+    100110: Mesh_Hair3_Dwarf_M
+    100112: Mesh_Hair4_Dwarf_M
+    100114: Mesh_Hair5_Dwarf_M
+    100116: Mesh_Hair7_Dwarf_M
+    100118: Mesh_Hair1_Dwarf_F
+    100120: Mesh_Hair3_Dwarf_F
+    100122: Mesh_Hair4_Dwarf_F
+    100124: Mesh_Hair5_Dwarf_F
+    100126: Mesh_Beard1_Dwarf
+    100128: Mesh_Beard2_Dwarf
+    100130: Mesh_Beard3_Dwarf
+    100132: Mesh_Beard4_Dwarf
+    100134: Mesh_Beard5_Dwarf
+    100136: Mesh_Eyebrow1_Dwarf_F
+    100138: Mesh_Eyebrow1_Dwarf_M
+    100140: Mesh_Head_Dwarf_PlateHelmet_F
+    100142: Mesh_Head_Dwarf_PlateHelmet_M
+    100144: Mesh_Legs_Dwarf_Platelegs_F
+    100146: Mesh_Legs_Dwarf_Platelegs_M
+    100148: Mesh_Hands_Dwarf_Gloves_F
+    100150: Mesh_Hands_Dwarf_Gloves_M
+    100152: Mesh_Body_Dwarf_RobeTop_F
+    100154: Mesh_Body_Dwarf_RobeTop_M
+    100156: Mesh_Legs_Dwarf_RobeBottom_F
+    100158: Mesh_Legs_Dwarf_RobeBottom_M
+    100160: Mesh_Neck_Dwarf_AmuletGem2_F
+    100162: Mesh_Neck_Dwarf_AmuletGem2_M
+    100164: Mesh_Neck_Dwarf_AmuletGem_F
+    100166: Mesh_Neck_Dwarf_AmuletGem_M
+    100168: Mesh_Body_Dwarf_PeasantShirt_F
+    100170: Mesh_Body_Dwarf_PeasantShirt_M
+    100172: Mesh_Legs_PeasantLegs_F
+    100174: Mesh_Legs_PeasantLegs_M
+    100176: Mesh_Head_Dwarf_Hood
+    100178: Mesh_Body_LeatherBody_F
+    100180: Mesh_Body_LeatherBody_M
+    100182: Mesh_Legs_Dwarf_LeatherLegs_F
+    100184: Mesh_Legs_Dwarf_LeatherLegs_M
+    100186: Mesh_Body_Dwarf_Tunic_F
+    100188: Mesh_Body_Dwarf_Tunic_M
+    100190: Mesh_Body_Dwarf_RogueShirt_F
+    100192: Mesh_Body_Dwarf_RogueShirt_M
+    100194: Mesh_Head_Dwarf_RogueMask_F
+    100196: Mesh_Head_Dwarf_RogueMask_M
+    100198: Mesh_Legs_Dwarf_RogueLegs_F
+    100200: Mesh_Legs_Dwarf_RogueLegs_M
+    100202: Mesh_Head_VikingHelm_F
+    100204: Mesh_Head_VikingHelm_M
+    100206: Mesh_Head_Dwarf_VikingHelm_F
+    100208: Mesh_Head_Dwarf_VikingHelm_M
+    100210: Mesh_Body_Dwarf_ChainMail_F
+    100212: Mesh_Body_Dwarf_ChainMail_M
+    100214: Mesh_Legs_ChainLegs_F
+    100216: Mesh_Legs_ChainLegs_M
+    100218: Mesh_Legs_Dwarf_ChainLegs_F
+    100220: Mesh_Legs_Dwarf_ChainLegs_M
+    100222: Mesh_Back_Dwarf_Cape1
+    100224: Mesh_Back_Dwarf_Cape2
+    100226: Mesh_Body_Dwarf_Robe2Top_F
+    100228: Mesh_Body_Dwarf_Robe2Top_M
+    100230: Mesh_Head_Dwarf_Hood2_F
+    100232: Mesh_Head_Dwarf_Hood2_M
+    100234: Mesh_Legs_Dwarf_Robe2Bottom_F
+    100236: Mesh_Legs_Dwarf_Robe2Bottom_M
+    100238: Mesh_Body_Dwarf_TemplarPlateBody_F
+    100240: Mesh_Body_Dwarf_TemplarPlateBody_M
+    100242: Mesh_Head_Dwarf_TemplarHelmet
+    100244: Mesh_Legs_Dwarf_TemplarPlatelegs_F
+    100246: Mesh_Legs_Dwarf_TemplarPlatelegs_M
+    100248: Mesh_Back_Dwarf_Quiver1
+    100250: Mesh_Back_Dwarf_Quiver2
+    100252: Mesh_Body_Dwarf_Shaman_F
+    100254: Mesh_Body_Dwarf_Shaman_M
+    100256: Mesh_Hands_Dwarf_ShamanHand_F
+    100258: Mesh_Hands_Dwarf_ShamanHand_M
+    100260: Mesh_Head_Dwarf_Shaman
+    100262: Mesh_Legs_Dwarf_ShamanLegs
+    100264: Mesh_Feet_Dwarf_ShamanBoots_F
+    100266: Mesh_Feet_Dwarf_ShamanBoots_M
+    100268: Mesh_Body_Dwarf_DruidRobeTop
+    100270: Mesh_Head_Dwarf_DruidHead
+    100272: Mesh_Legs_Dwarf_DruidRobeBottom
+    100274: Mesh_Hair11_Dwarf
+    100276: Mesh_Hair12_Dwarf
+    100278: Mesh_Hair13_Dwarf
+    100280: Mesh_Hair1_Dwarf
+    100282: Mesh_Hair8_Dwarf
+    100284: Mesh_Hair9_Dwarf
+    100286: Mesh_Hair10_Dwarf
+    100288: Mesh_Body_Dwarf_Berserk_F
+    100290: Mesh_Body_Dwarf_Berserk_M
+    100292: Mesh_Cape_Berserk
+    100294: Mesh_Feet_Dwarf_Berserk_M
+    100296: Mesh_Hands_Berserk_F
+    100298: Mesh_Hands_Berserk_M
+    100300: Mesh_Head_Dwarf_Berserk
+    100302: Mesh_Legs_Dwarf_Berserk_F
+    100304: Mesh_Legs_Dwarf_Berserk_M
+    100306: Mesh_Hands_Dwarf_Berserk_F
+    100308: Mesh_Hands_Dwarf_Berserk_M
+    400000: AAA_Male_Feet
+    400002: AAA_Male_Hands
+    400004: AAA_Male_Head
+    400006: AAA_Male_Legs
+    400008: AAA_Male_Torso
+    400010: Arm.L
+    400012: Arm.R
+    400014: Armature
+    400016: Chest
+    400018: //RootNode
+    400020: Foot.L
+    400022: Foot.L_end
+    400024: Foot.R
+    400026: Foot.R_end
+    400028: ForeArm.L
+    400030: ForeArm.R
+    400032: Hand.L
+    400034: Hand.L_end
+    400036: Hand.R
+    400038: Hand.R_end
+    400040: Head
+    400042: Head_end
+    400044: Hip
+    400046: Leg.L
+    400048: Leg.R
+    400050: Neck
+    400052: Shoulder.L
+    400054: Shoulder.R
+    400056: Spine
+    400058: Thigh.L
+    400060: Thigh.R
+    400062: Plane
+    400064: Beard
+    400066: Mesh_Body_Platebody_M
+    400068: Mesh_Legs_Platelegs_M
+    400070: Mesh_Feet_LeatherBoots_M
+    400072: Mesh_Hair5_M
+    400074: AAA_Female_Feet
+    400076: AAA_Female_Hands
+    400078: AAA_Female_Head
+    400080: AAA_Female_Legs
+    400082: AAA_Female_Torso
+    400084: Mesh_Body_Platebody_F
+    400086: Mesh_Feet_LeatherBoots_F
+    400088: Mesh_Hair2_F
+    400090: Mesh_Legs_Platelegs_F
+    400092: Mesh_Body_DwarfPlatebody_F
+    400094: Mesh_Body_DwarfPlatebody_M
+    400096: Mesh_Feet_Dwarf_LeatherBoots_F
+    400098: Mesh_Feet_Dwarf_LeatherBoots_M
+    400100: Mesh_Body_Dwarf_Platebody_F
+    400102: Mesh_Body_Dwarf_Platebody_M
+    400104: Mesh_Hair1_Dwarf_M
+    400106: Mesh_Hair2_Dwarf_F
+    400108: Mesh_Hair2_Dwarf_M
+    400110: Mesh_Hair3_Dwarf_M
+    400112: Mesh_Hair4_Dwarf_M
+    400114: Mesh_Hair5_Dwarf_M
+    400116: Mesh_Hair7_Dwarf_M
+    400118: Mesh_Hair1_Dwarf_F
+    400120: Mesh_Hair3_Dwarf_F
+    400122: Mesh_Hair4_Dwarf_F
+    400124: Mesh_Hair5_Dwarf_F
+    400126: Mesh_Beard1_Dwarf
+    400128: Mesh_Beard2_Dwarf
+    400130: Mesh_Beard3_Dwarf
+    400132: Mesh_Beard4_Dwarf
+    400134: Mesh_Beard5_Dwarf
+    400136: Mesh_Eyebrow1_Dwarf_F
+    400138: Mesh_Eyebrow1_Dwarf_M
+    400140: Mesh_Head_Dwarf_PlateHelmet_F
+    400142: Mesh_Head_Dwarf_PlateHelmet_M
+    400144: Mesh_Legs_Dwarf_Platelegs_F
+    400146: Mesh_Legs_Dwarf_Platelegs_M
+    400148: Mesh_Hands_Dwarf_Gloves_F
+    400150: Mesh_Hands_Dwarf_Gloves_M
+    400152: Mesh_Body_Dwarf_RobeTop_F
+    400154: Mesh_Body_Dwarf_RobeTop_M
+    400156: Mesh_Legs_Dwarf_RobeBottom_F
+    400158: Mesh_Legs_Dwarf_RobeBottom_M
+    400160: Mesh_Neck_Dwarf_AmuletGem2_F
+    400162: Mesh_Neck_Dwarf_AmuletGem2_M
+    400164: Mesh_Neck_Dwarf_AmuletGem_F
+    400166: Mesh_Neck_Dwarf_AmuletGem_M
+    400168: Mesh_Body_Dwarf_PeasantShirt_F
+    400170: Mesh_Body_Dwarf_PeasantShirt_M
+    400172: Mesh_Legs_PeasantLegs_F
+    400174: Mesh_Legs_PeasantLegs_M
+    400176: Mesh_Head_Dwarf_Hood
+    400178: Mesh_Body_LeatherBody_F
+    400180: Mesh_Body_LeatherBody_M
+    400182: Mesh_Legs_Dwarf_LeatherLegs_F
+    400184: Mesh_Legs_Dwarf_LeatherLegs_M
+    400186: Mesh_Body_Dwarf_Tunic_F
+    400188: Mesh_Body_Dwarf_Tunic_M
+    400190: Mesh_Body_Dwarf_RogueShirt_F
+    400192: Mesh_Body_Dwarf_RogueShirt_M
+    400194: Mesh_Head_Dwarf_RogueMask_F
+    400196: Mesh_Head_Dwarf_RogueMask_M
+    400198: Mesh_Legs_Dwarf_RogueLegs_F
+    400200: Mesh_Legs_Dwarf_RogueLegs_M
+    400202: Mesh_Head_VikingHelm_F
+    400204: Mesh_Head_VikingHelm_M
+    400206: Mesh_Head_Dwarf_VikingHelm_F
+    400208: Mesh_Head_Dwarf_VikingHelm_M
+    400210: Mesh_Body_Dwarf_ChainMail_F
+    400212: Mesh_Body_Dwarf_ChainMail_M
+    400214: Mesh_Legs_ChainLegs_F
+    400216: Mesh_Legs_ChainLegs_M
+    400218: Mesh_Legs_Dwarf_ChainLegs_F
+    400220: Mesh_Legs_Dwarf_ChainLegs_M
+    400222: Mesh_Back_Dwarf_Cape1
+    400224: Mesh_Back_Dwarf_Cape2
+    400226: Mesh_Body_Dwarf_Robe2Top_F
+    400228: Mesh_Body_Dwarf_Robe2Top_M
+    400230: Mesh_Head_Dwarf_Hood2_F
+    400232: Mesh_Head_Dwarf_Hood2_M
+    400234: Mesh_Legs_Dwarf_Robe2Bottom_F
+    400236: Mesh_Legs_Dwarf_Robe2Bottom_M
+    400238: Mesh_Body_Dwarf_TemplarPlateBody_F
+    400240: Mesh_Body_Dwarf_TemplarPlateBody_M
+    400242: Mesh_Head_Dwarf_TemplarHelmet
+    400244: Mesh_Legs_Dwarf_TemplarPlatelegs_F
+    400246: Mesh_Legs_Dwarf_TemplarPlatelegs_M
+    400248: Mesh_Back_Dwarf_Quiver1
+    400250: Mesh_Back_Dwarf_Quiver2
+    400252: Mesh_Body_Dwarf_Shaman_F
+    400254: Mesh_Body_Dwarf_Shaman_M
+    400256: Mesh_Hands_Dwarf_ShamanHand_F
+    400258: Mesh_Hands_Dwarf_ShamanHand_M
+    400260: Mesh_Head_Dwarf_Shaman
+    400262: Mesh_Legs_Dwarf_ShamanLegs
+    400264: Mesh_Feet_Dwarf_ShamanBoots_F
+    400266: Mesh_Feet_Dwarf_ShamanBoots_M
+    400268: Mesh_Body_Dwarf_DruidRobeTop
+    400270: Mesh_Head_Dwarf_DruidHead
+    400272: Mesh_Legs_Dwarf_DruidRobeBottom
+    400274: Mesh_Hair11_Dwarf
+    400276: Mesh_Hair12_Dwarf
+    400278: Mesh_Hair13_Dwarf
+    400280: Mesh_Hair1_Dwarf
+    400282: Mesh_Hair8_Dwarf
+    400284: Mesh_Hair9_Dwarf
+    400286: Mesh_Hair10_Dwarf
+    400288: Mesh_Body_Dwarf_Berserk_F
+    400290: Mesh_Body_Dwarf_Berserk_M
+    400292: Mesh_Cape_Berserk
+    400294: Mesh_Feet_Dwarf_Berserk_M
+    400296: Mesh_Hands_Berserk_F
+    400298: Mesh_Hands_Berserk_M
+    400300: Mesh_Head_Dwarf_Berserk
+    400302: Mesh_Legs_Dwarf_Berserk_F
+    400304: Mesh_Legs_Dwarf_Berserk_M
+    400306: Mesh_Hands_Dwarf_Berserk_F
+    400308: Mesh_Hands_Dwarf_Berserk_M
+    2100000: Skin.001
+    2100002: Material.003
+    2100004: Black.001
+    2100006: Mouth
+    2100008: Eye
+    2100010: Beard
+    2100012: Light.002
+    2100014: Dark.002
+    4300000: AAA_Male_Feet
+    4300002: AAA_Male_Legs
+    4300004: AAA_Male_Hands
+    4300006: AAA_Male_Head
+    4300008: AAA_Male_Torso
+    4300010: Plane
+    4300012: Beard
+    4300014: Mesh_Body_Platebody_M
+    4300016: Mesh_Legs_Platelegs_M
+    4300018: Mesh_Feet_LeatherBoots_M
+    4300020: Mesh_Hair5_M
+    4300022: Mesh_Feet_LeatherBoots_F
+    4300024: Mesh_Legs_Platelegs_F
+    4300026: Mesh_Body_Platebody_F
+    4300028: AAA_Female_Feet
+    4300030: AAA_Female_Legs
+    4300032: AAA_Female_Hands
+    4300034: AAA_Female_Torso
+    4300036: AAA_Female_Head
+    4300038: Mesh_Hair2_F
+    4300040: Mesh_Body_DwarfPlatebody_F
+    4300042: Mesh_Body_DwarfPlatebody_M
+    4300044: Mesh_Feet_Dwarf_LeatherBoots_F
+    4300046: Mesh_Feet_Dwarf_LeatherBoots_M
+    4300048: Mesh_Body_Dwarf_Platebody_F
+    4300050: Mesh_Body_Dwarf_Platebody_M
+    4300052: Mesh_Hair5_Dwarf_M
+    4300054: Mesh_Hair7_Dwarf_M
+    4300056: Mesh_Hair2_Dwarf_F
+    4300058: Mesh_Hair1_Dwarf_M
+    4300060: Mesh_Hair2_Dwarf_M
+    4300062: Mesh_Hair3_Dwarf_M
+    4300064: Mesh_Hair4_Dwarf_M
+    4300066: Mesh_Hair1_Dwarf_F
+    4300068: Mesh_Hair3_Dwarf_F
+    4300070: Mesh_Hair4_Dwarf_F
+    4300072: Mesh_Hair5_Dwarf_F
+    4300074: Mesh_Beard5_Dwarf
+    4300076: Mesh_Beard2_Dwarf
+    4300078: Mesh_Beard3_Dwarf
+    4300080: Mesh_Beard4_Dwarf
+    4300082: Mesh_Beard1_Dwarf
+    4300084: Mesh_Eyebrow1_Dwarf_F
+    4300086: Mesh_Eyebrow1_Dwarf_M
+    4300088: Mesh_Head_Dwarf_PlateHelmet_M
+    4300090: Mesh_Legs_Dwarf_Platelegs_F
+    4300092: Mesh_Legs_Dwarf_Platelegs_M
+    4300094: Mesh_Head_Dwarf_PlateHelmet_F
+    4300096: Mesh_Hands_Dwarf_Gloves_M
+    4300098: Mesh_Hands_Dwarf_Gloves_F
+    4300100: Mesh_Body_Dwarf_RobeTop_F
+    4300102: Mesh_Legs_Dwarf_RobeBottom_F
+    4300104: Mesh_Body_Dwarf_RobeTop_M
+    4300106: Mesh_Legs_Dwarf_RobeBottom_M
+    4300108: Mesh_Neck_Dwarf_AmuletGem_F
+    4300110: Mesh_Neck_Dwarf_AmuletGem2_F
+    4300112: Mesh_Neck_Dwarf_AmuletGem2_M
+    4300114: Mesh_Neck_Dwarf_AmuletGem_M
+    4300116: Mesh_Body_Dwarf_PeasantShirt_F
+    4300118: Mesh_Body_Dwarf_PeasantShirt_M
+    4300120: Mesh_Legs_PeasantLegs_F
+    4300122: Mesh_Legs_PeasantLegs_M
+    4300124: Mesh_Head_Dwarf_Hood
+    4300126: Mesh_Body_LeatherBody_F
+    4300128: Mesh_Body_LeatherBody_M
+    4300130: Mesh_Legs_Dwarf_LeatherLegs_F
+    4300132: Mesh_Legs_Dwarf_LeatherLegs_M
+    4300134: Mesh_Body_Dwarf_Tunic_F
+    4300136: Mesh_Body_Dwarf_Tunic_M
+    4300138: Mesh_Head_Dwarf_RogueMask_F
+    4300140: Mesh_Body_Dwarf_RogueShirt_F
+    4300142: Mesh_Legs_Dwarf_RogueLegs_F
+    4300144: Mesh_Head_Dwarf_RogueMask_M
+    4300146: Mesh_Legs_Dwarf_RogueLegs_M
+    4300148: Mesh_Body_Dwarf_RogueShirt_M
+    4300150: Mesh_Head_VikingHelm_F
+    4300152: Mesh_Head_VikingHelm_M
+    4300154: Mesh_Head_Dwarf_VikingHelm_F
+    4300156: Mesh_Head_Dwarf_VikingHelm_M
+    4300158: Mesh_Body_Dwarf_ChainMail_M
+    4300160: Mesh_Body_Dwarf_ChainMail_F
+    4300162: Mesh_Legs_ChainLegs_F
+    4300164: Mesh_Legs_ChainLegs_M
+    4300166: Mesh_Legs_Dwarf_ChainLegs_F
+    4300168: Mesh_Legs_Dwarf_ChainLegs_M
+    4300170: Mesh_Back_Dwarf_Cape1
+    4300172: Mesh_Back_Dwarf_Cape2
+    4300174: Mesh_Head_Dwarf_Hood2_F
+    4300176: Mesh_Legs_Dwarf_Robe2Bottom_F
+    4300178: Mesh_Body_Dwarf_Robe2Top_F
+    4300180: Mesh_Body_Dwarf_Robe2Top_M
+    4300182: Mesh_Legs_Dwarf_Robe2Bottom_M
+    4300184: Mesh_Head_Dwarf_Hood2_M
+    4300186: Mesh_Legs_Dwarf_TemplarPlatelegs_M
+    4300188: Mesh_Body_Dwarf_TemplarPlateBody_M
+    4300190: Mesh_Legs_Dwarf_TemplarPlatelegs_F
+    4300192: Mesh_Body_Dwarf_TemplarPlateBody_F
+    4300194: Mesh_Head_Dwarf_TemplarHelmet
+    4300196: Mesh_Back_Dwarf_Quiver1
+    4300198: Mesh_Back_Dwarf_Quiver2
+    4300200: Mesh_Hands_Dwarf_ShamanHand_M
+    4300202: Mesh_Hands_Dwarf_ShamanHand_F
+    4300204: Mesh_Body_Dwarf_Shaman_M
+    4300206: Mesh_Body_Dwarf_Shaman_F
+    4300208: Mesh_Head_Dwarf_Shaman
+    4300210: Mesh_Legs_Dwarf_ShamanLegs
+    4300212: Mesh_Feet_Dwarf_ShamanBoots_M
+    4300214: Mesh_Feet_Dwarf_ShamanBoots_F
+    4300216: Mesh_Head_Dwarf_DruidHead
+    4300218: Mesh_Body_Dwarf_DruidRobeTop
+    4300220: Mesh_Legs_Dwarf_DruidRobeBottom
+    4300222: Mesh_Hair1_Dwarf
+    4300224: Mesh_Hair11_Dwarf
+    4300226: Mesh_Hair12_Dwarf
+    4300228: Mesh_Hair13_Dwarf
+    4300230: Mesh_Hair8_Dwarf
+    4300232: Mesh_Hair9_Dwarf
+    4300234: Mesh_Hair10_Dwarf
+    4300236: Mesh_Hands_Berserk_F
+    4300238: Mesh_Legs_Dwarf_Berserk_F
+    4300240: Mesh_Body_Dwarf_Berserk_F
+    4300242: Mesh_Feet_Dwarf_Berserk_M
+    4300244: Mesh_Body_Dwarf_Berserk_M
+    4300246: Mesh_Legs_Dwarf_Berserk_M
+    4300248: Mesh_Cape_Berserk
+    4300250: Mesh_Hands_Berserk_M
+    4300252: Mesh_Head_Dwarf_Berserk
+    4300254: Mesh_Hands_Dwarf_Berserk_F
+    4300256: Mesh_Hands_Dwarf_Berserk_M
+    9500000: //RootNode
+    13700000: AAA_Male_Feet
+    13700002: AAA_Male_Hands
+    13700004: AAA_Male_Head
+    13700006: AAA_Male_Legs
+    13700008: AAA_Male_Torso
+    13700010: Plane
+    13700012: Beard
+    13700014: Mesh_Body_Platebody_M
+    13700016: Mesh_Legs_Platelegs_M
+    13700018: Mesh_Feet_LeatherBoots_M
+    13700020: Mesh_Hair5_M
+    13700022: AAA_Female_Feet
+    13700024: AAA_Female_Hands
+    13700026: AAA_Female_Head
+    13700028: AAA_Female_Legs
+    13700030: AAA_Female_Torso
+    13700032: Mesh_Body_Platebody_F
+    13700034: Mesh_Feet_LeatherBoots_F
+    13700036: Mesh_Hair2_F
+    13700038: Mesh_Legs_Platelegs_F
+    13700040: Mesh_Body_DwarfPlatebody_F
+    13700042: Mesh_Body_DwarfPlatebody_M
+    13700044: Mesh_Feet_Dwarf_LeatherBoots_F
+    13700046: Mesh_Feet_Dwarf_LeatherBoots_M
+    13700048: Mesh_Body_Dwarf_Platebody_F
+    13700050: Mesh_Body_Dwarf_Platebody_M
+    13700052: Mesh_Hair1_Dwarf_M
+    13700054: Mesh_Hair2_Dwarf_F
+    13700056: Mesh_Hair2_Dwarf_M
+    13700058: Mesh_Hair3_Dwarf_M
+    13700060: Mesh_Hair4_Dwarf_M
+    13700062: Mesh_Hair5_Dwarf_M
+    13700064: Mesh_Hair7_Dwarf_M
+    13700066: Mesh_Hair1_Dwarf_F
+    13700068: Mesh_Hair3_Dwarf_F
+    13700070: Mesh_Hair4_Dwarf_F
+    13700072: Mesh_Hair5_Dwarf_F
+    13700074: Mesh_Beard1_Dwarf
+    13700076: Mesh_Beard2_Dwarf
+    13700078: Mesh_Beard3_Dwarf
+    13700080: Mesh_Beard4_Dwarf
+    13700082: Mesh_Beard5_Dwarf
+    13700084: Mesh_Eyebrow1_Dwarf_F
+    13700086: Mesh_Eyebrow1_Dwarf_M
+    13700088: Mesh_Head_Dwarf_PlateHelmet_F
+    13700090: Mesh_Head_Dwarf_PlateHelmet_M
+    13700092: Mesh_Legs_Dwarf_Platelegs_F
+    13700094: Mesh_Legs_Dwarf_Platelegs_M
+    13700096: Mesh_Hands_Dwarf_Gloves_F
+    13700098: Mesh_Hands_Dwarf_Gloves_M
+    13700100: Mesh_Body_Dwarf_RobeTop_F
+    13700102: Mesh_Body_Dwarf_RobeTop_M
+    13700104: Mesh_Legs_Dwarf_RobeBottom_F
+    13700106: Mesh_Legs_Dwarf_RobeBottom_M
+    13700108: Mesh_Neck_Dwarf_AmuletGem2_F
+    13700110: Mesh_Neck_Dwarf_AmuletGem2_M
+    13700112: Mesh_Neck_Dwarf_AmuletGem_F
+    13700114: Mesh_Neck_Dwarf_AmuletGem_M
+    13700116: Mesh_Body_Dwarf_PeasantShirt_F
+    13700118: Mesh_Body_Dwarf_PeasantShirt_M
+    13700120: Mesh_Legs_PeasantLegs_F
+    13700122: Mesh_Legs_PeasantLegs_M
+    13700124: Mesh_Head_Dwarf_Hood
+    13700126: Mesh_Body_LeatherBody_F
+    13700128: Mesh_Body_LeatherBody_M
+    13700130: Mesh_Legs_Dwarf_LeatherLegs_F
+    13700132: Mesh_Legs_Dwarf_LeatherLegs_M
+    13700134: Mesh_Body_Dwarf_Tunic_F
+    13700136: Mesh_Body_Dwarf_Tunic_M
+    13700138: Mesh_Body_Dwarf_RogueShirt_F
+    13700140: Mesh_Body_Dwarf_RogueShirt_M
+    13700142: Mesh_Head_Dwarf_RogueMask_F
+    13700144: Mesh_Head_Dwarf_RogueMask_M
+    13700146: Mesh_Legs_Dwarf_RogueLegs_F
+    13700148: Mesh_Legs_Dwarf_RogueLegs_M
+    13700150: Mesh_Head_VikingHelm_F
+    13700152: Mesh_Head_VikingHelm_M
+    13700154: Mesh_Head_Dwarf_VikingHelm_F
+    13700156: Mesh_Head_Dwarf_VikingHelm_M
+    13700158: Mesh_Body_Dwarf_ChainMail_F
+    13700160: Mesh_Body_Dwarf_ChainMail_M
+    13700162: Mesh_Legs_ChainLegs_F
+    13700164: Mesh_Legs_ChainLegs_M
+    13700166: Mesh_Legs_Dwarf_ChainLegs_F
+    13700168: Mesh_Legs_Dwarf_ChainLegs_M
+    13700170: Mesh_Back_Dwarf_Cape1
+    13700172: Mesh_Back_Dwarf_Cape2
+    13700174: Mesh_Body_Dwarf_Robe2Top_F
+    13700176: Mesh_Body_Dwarf_Robe2Top_M
+    13700178: Mesh_Head_Dwarf_Hood2_F
+    13700180: Mesh_Head_Dwarf_Hood2_M
+    13700182: Mesh_Legs_Dwarf_Robe2Bottom_F
+    13700184: Mesh_Legs_Dwarf_Robe2Bottom_M
+    13700186: Mesh_Body_Dwarf_TemplarPlateBody_F
+    13700188: Mesh_Body_Dwarf_TemplarPlateBody_M
+    13700190: Mesh_Head_Dwarf_TemplarHelmet
+    13700192: Mesh_Legs_Dwarf_TemplarPlatelegs_F
+    13700194: Mesh_Legs_Dwarf_TemplarPlatelegs_M
+    13700196: Mesh_Back_Dwarf_Quiver1
+    13700198: Mesh_Back_Dwarf_Quiver2
+    13700200: Mesh_Body_Dwarf_Shaman_F
+    13700202: Mesh_Body_Dwarf_Shaman_M
+    13700204: Mesh_Hands_Dwarf_ShamanHand_F
+    13700206: Mesh_Hands_Dwarf_ShamanHand_M
+    13700208: Mesh_Head_Dwarf_Shaman
+    13700210: Mesh_Legs_Dwarf_ShamanLegs
+    13700212: Mesh_Feet_Dwarf_ShamanBoots_F
+    13700214: Mesh_Feet_Dwarf_ShamanBoots_M
+    13700216: Mesh_Body_Dwarf_DruidRobeTop
+    13700218: Mesh_Head_Dwarf_DruidHead
+    13700220: Mesh_Legs_Dwarf_DruidRobeBottom
+    13700222: Mesh_Hair11_Dwarf
+    13700224: Mesh_Hair12_Dwarf
+    13700226: Mesh_Hair13_Dwarf
+    13700228: Mesh_Hair1_Dwarf
+    13700230: Mesh_Hair8_Dwarf
+    13700232: Mesh_Hair9_Dwarf
+    13700234: Mesh_Hair10_Dwarf
+    13700236: Mesh_Body_Dwarf_Berserk_F
+    13700238: Mesh_Body_Dwarf_Berserk_M
+    13700240: Mesh_Cape_Berserk
+    13700242: Mesh_Feet_Dwarf_Berserk_M
+    13700244: Mesh_Hands_Berserk_F
+    13700246: Mesh_Hands_Berserk_M
+    13700248: Mesh_Head_Dwarf_Berserk
+    13700250: Mesh_Legs_Dwarf_Berserk_F
+    13700252: Mesh_Legs_Dwarf_Berserk_M
+    13700254: Mesh_Hands_Dwarf_Berserk_F
+    13700256: Mesh_Hands_Dwarf_Berserk_M
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 110
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Hip
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Thigh.L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Thigh.R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Leg.L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Leg.R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Foot.L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Foot.R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Shoulder.L
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Shoulder.R
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Arm.L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Arm.R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ForeArm.L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ForeArm.R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hand.L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hand.R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Dwarf(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: AAA_Male_Feet
+      parentName: Dwarf(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 48.77743, y: 48.77743, z: 48.77743}
+    - name: AAA_Male_Hands
+      parentName: Dwarf(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 48.77743, y: 48.77743, z: 48.77743}
+    - name: AAA_Male_Head
+      parentName: Dwarf(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 48.77743, y: 48.77743, z: 48.77743}
+    - name: AAA_Male_Legs
+      parentName: Dwarf(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 48.77743, y: 48.77743, z: 48.77743}
+    - name: AAA_Male_Torso
+      parentName: Dwarf(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 48.77743, y: 48.77743, z: 48.77743}
+    - name: Armature
+      parentName: Dwarf(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Hip
+      parentName: Armature
+      position: {x: -3.4236806e-12, y: -0.000222896, z: 0.015558658}
+      rotation: {x: 0.69723463, y: 0.00000008545435, z: 0.000000083080785, w: 0.716843}
+      scale: {x: 1, y: 0.9999981, z: 0.9999981}
+    - name: Spine
+      parentName: Hip
+      position: {x: -1.1150269e-10, y: 0.0035770447, z: 0.0004677792}
+      rotation: {x: 0.04854295, y: 0.00012577463, z: 0.000110895664, w: 0.99882114}
+      scale: {x: 0.9999988, y: 1.0000018, z: 1.000002}
+    - name: Chest
+      parentName: Spine
+      position: {x: 3.637979e-14, y: 0.005306668, z: 8.124972e-11}
+      rotation: {x: -0.122620955, y: -0.00021793942, z: -0.00020706885, w: 0.9924535}
+      scale: {x: 0.9999992, y: 1.0000004, z: 0.99999785}
+    - name: Neck
+      parentName: Chest
+      position: {x: 0.000000013123228, y: 0.0051812725, z: 0.00010943804}
+      rotation: {x: 0.11223335, y: 0.012221862, z: 0.018945193, w: 0.99342614}
+      scale: {x: 1.0000007, y: 1.0000005, z: 1.0000007}
+    - name: Head
+      parentName: Neck
+      position: {x: 9.7788874e-11, y: 0.0009232766, z: -7.433119e-10}
+      rotation: {x: 0.017050052, y: 0.99948955, z: 0.02276159, w: 0.014554288}
+      scale: {x: 1.0000024, y: 0.9999999, z: 1.0000014}
+    - name: Head_end
+      parentName: Head
+      position: {x: -0, y: 0.004366644, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Shoulder.L
+      parentName: Chest
+      position: {x: -0.0006627748, y: 0.004297093, z: -0.00001221408}
+      rotation: {x: 0.4709164, y: -0.4511568, z: -0.53881586, w: -0.53326625}
+      scale: {x: 1.0000033, y: 1.0000014, z: 1.0000026}
+    - name: Arm.L
+      parentName: Shoulder.L
+      position: {x: -1.3038517e-10, y: 0.0050430484, z: -0.0000000045448547}
+      rotation: {x: -0.025097394, y: 0.03367517, z: 0.022976408, w: 0.99885345}
+      scale: {x: 1.000003, y: 1.0000039, z: 1.0000015}
+    - name: ForeArm.L
+      parentName: Arm.L
+      position: {x: 3.7252906e-11, y: 0.0068145674, z: -7.264317e-10}
+      rotation: {x: -0.048245758, y: 0.04902736, z: 0.013330321, w: -0.99754244}
+      scale: {x: 1.0000004, y: 1.0000023, z: 1.0000008}
+    - name: Hand.L
+      parentName: ForeArm.L
+      position: {x: -3.7252904e-10, y: 0.0060858084, z: -0.0000000010500663}
+      rotation: {x: -0.072918735, y: -0.023433508, z: -0.0004562504, w: 0.9970625}
+      scale: {x: 1.0000037, y: 1.0000043, z: 1.0000061}
+    - name: Hand.L_end
+      parentName: Hand.L
+      position: {x: -0, y: 0.0047753453, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Shoulder.R
+      parentName: Chest
+      position: {x: 0.00066368136, y: 0.004296652, z: -0.000008509036}
+      rotation: {x: 0.47150362, y: 0.45073244, z: 0.53812397, w: -0.5338045}
+      scale: {x: 1.0000019, y: 1.0000014, z: 1.000001}
+    - name: Arm.R
+      parentName: Shoulder.R
+      position: {x: 4.516915e-10, y: 0.0047489144, z: 0.0000000030547382}
+      rotation: {x: -0.023296833, y: 0.020174086, z: -0.0014850646, w: 0.99952394}
+      scale: {x: 1.0000006, y: 1.0000019, z: 1}
+    - name: ForeArm.R
+      parentName: Arm.R
+      position: {x: 2.3283065e-11, y: 0.0072138263, z: -8.8009994e-10}
+      rotation: {x: -0.04524039, y: -0.002977712, z: -0.0048817825, w: -0.99895984}
+      scale: {x: 1.0000019, y: 1.0000007, z: 0.99999934}
+    - name: Hand.R
+      parentName: ForeArm.R
+      position: {x: -1.1175873e-10, y: 0.0062962146, z: -9.685754e-10}
+      rotation: {x: 0.08636291, y: 0.03762611, z: 0.015979465, w: -0.99542475}
+      scale: {x: 1.0000001, y: 1.0000021, z: 1.0000031}
+    - name: Hand.R_end
+      parentName: Hand.R
+      position: {x: -0, y: 0.004821603, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Thigh.L
+      parentName: Hip
+      position: {x: -0.003556586, y: 0.0013674909, z: 0.000049716826}
+      rotation: {x: 0.99696046, y: -0.051084444, z: -0.0550201, w: -0.020809151}
+      scale: {x: 0.99998796, y: 1.0000081, z: 1.0000057}
+    - name: Leg.L
+      parentName: Thigh.L
+      position: {x: 1.2572855e-10, y: 0.007656843, z: 5.5879364e-11}
+      rotation: {x: 0.044366673, y: -0.00401621, z: -0.0704149, w: 0.9965226}
+      scale: {x: 1.0000005, y: 1.0000042, z: 1.000005}
+    - name: Foot.L
+      parentName: Leg.L
+      position: {x: 1.0943041e-10, y: 0.008734029, z: -7.450581e-11}
+      rotation: {x: -0.032358173, y: 0.69010425, z: -0.7188681, w: -0.07705757}
+      scale: {x: 1.000012, y: 1, z: 1.0000046}
+    - name: Foot.L_end
+      parentName: Foot.L
+      position: {x: -0, y: 0.0056789825, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Thigh.R
+      parentName: Hip
+      position: {x: 0.003545043, y: 0.001338662, z: 0.00003434953}
+      rotation: {x: 0.9971013, y: 0.048177704, z: 0.05570268, w: -0.019109035}
+      scale: {x: 0.9999924, y: 1.0000069, z: 1.000005}
+    - name: Leg.R
+      parentName: Thigh.R
+      position: {x: 4.6798965e-10, y: 0.0076251086, z: -1.8626453e-11}
+      rotation: {x: 0.046679266, y: -0.011218132, z: 0.08169155, w: 0.99550074}
+      scale: {x: 1.0000004, y: 1.0000046, z: 1.0000039}
+    - name: Foot.R
+      parentName: Leg.R
+      position: {x: 5.5879364e-11, y: 0.008721405, z: 6.519259e-11}
+      rotation: {x: -0.7125272, y: -0.0059526684, z: -0.0980911, w: 0.6947286}
+      scale: {x: 1.0000033, y: 1.0000033, z: 1.0000021}
+    - name: Foot.R_end
+      parentName: Foot.R
+      position: {x: -0, y: 0.005690816, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
