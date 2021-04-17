@@ -5,16 +5,18 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    [Header("Player Information")]
-    [SerializeField] private CharacterBase player;
-
-    public CharacterBase getPlayer()
-    {
-        return player;
-    }
-
+    [Header("Main camera attachted to the player")]
+    public Camera camera;
+    
+    [Header("Possible Colors")]
+    [SerializeField] public List<Color> skinColors = new List<Color>();
+    [SerializeField] public List<Color> hairColors = new List<Color>();
+    [SerializeField] public List<Color> eyeColors = new List<Color>();
+    
     void Start()
     {
-        Utility.AddSceneIfNotLoaded("Character Customization");
+        Application.targetFrameRate = 60;
+        Utility.AddSceneIfNotLoaded("Character Customization"); //Character Customization
     }
+    
 }

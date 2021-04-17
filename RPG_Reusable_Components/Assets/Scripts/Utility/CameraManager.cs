@@ -17,9 +17,7 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private TMP_Text rotationText;
     [Header("Zoom")]
     [SerializeField] private bool zoom;
-    [SerializeField] private Image zoomSprite;
-    [SerializeField] private Sprite[] zoomSprites;
-
+    
     void Update()
     {
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yRotation, xRotation), 10 * Time.deltaTime);
@@ -39,7 +37,6 @@ public class CameraManager : MonoBehaviour
     public void ToggleZoom()
     {
         zoom = !zoom;
-        zoomSprite.sprite = zoomSprites[zoom ? 1 : 0];
     }
 
     public void RotateLeft()

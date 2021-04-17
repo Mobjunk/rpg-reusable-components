@@ -31,7 +31,7 @@ namespace RPGCharacters {
         [System.Serializable]
         public class EquipmentSlot {
             public Item item;
-            public Item.EquipmentSlots slot;
+            public EquipmentSlots slot;
             public Transform container;
             public GameObject instancedObject;
             public GameObject activeObject; // male or female variation
@@ -88,7 +88,7 @@ namespace RPGCharacters {
         }
 
 
-        public void UnequipSlot(Item.EquipmentSlots slot) {
+        public void UnequipSlot(EquipmentSlots slot) {
             UnloadSlot(slot);
             SetupBody();
         }
@@ -154,14 +154,14 @@ namespace RPGCharacters {
             }
         }
 
-        void UnloadSlot(Item.EquipmentSlots slot) {
+        void UnloadSlot(EquipmentSlots slot) {
             if (GetEquipmentSlot(slot).inUse) {
                 GetEquipmentSlot(slot).inUse = false;
                 GameObject.Destroy(GetEquipmentSlot(slot).instancedObject);
             }
         }
 
-        public EquipmentSlot GetEquipmentSlot(Item.EquipmentSlots slot) {
+        public EquipmentSlot GetEquipmentSlot(EquipmentSlots slot) {
             foreach (EquipmentSlot e in equipmentSlots) {
                 if (e.slot == slot) {
                     return e;
@@ -203,7 +203,7 @@ namespace RPGCharacters {
                 itemObject.SetActive(true);
                 loadedItem.name = 
                     (gender == 0 ? "M" : "F")+ " "+
-                    (item.equipmentSlot == Item.EquipmentSlots.none ? "BodyPart" : item.equipmentSlot.ToString()) + " " 
+                    (item.equipmentSlot == EquipmentSlots.none ? "BodyPart" : item.equipmentSlot.ToString()) + " " 
                     + itemId; // give the gameobject a more descriptive name
 
                 if (item.skinned) {
@@ -284,28 +284,28 @@ namespace RPGCharacters {
         public void SetupBody() { // load body parts, hair, beard, eyebrows
             ClearBody();
 
-            if (GetEquipmentSlot(Item.EquipmentSlots.head).inUse) {
-                if (GetEquipmentSlot(Item.EquipmentSlots.head).item.showHead) {
+            if (GetEquipmentSlot(EquipmentSlots.head).inUse) {
+                if (GetEquipmentSlot(EquipmentSlots.head).item.showHead) {
                     LoadItem(4, ItemType.BodyParts); // head 
                 }
-                if (GetEquipmentSlot(Item.EquipmentSlots.head).item.showHair) {
+                if (GetEquipmentSlot(EquipmentSlots.head).item.showHair) {
                     LoadItem(hairStyle, ItemType.Hair);
                 } else {
-                    UnloadSlot(Item.EquipmentSlots.hair);
+                    UnloadSlot(EquipmentSlots.hair);
                 }
-                if (GetEquipmentSlot(Item.EquipmentSlots.head).item.showEyebrow) {
+                if (GetEquipmentSlot(EquipmentSlots.head).item.showEyebrow) {
                     LoadItem(eyebrowStyle, ItemType.Eyebrow);
                 } else {
-                    UnloadSlot(Item.EquipmentSlots.eyebrow);
+                    UnloadSlot(EquipmentSlots.eyebrow);
                 }
                 if (gender == 0) {
-                    if (GetEquipmentSlot(Item.EquipmentSlots.head).item.showBeard) {
+                    if (GetEquipmentSlot(EquipmentSlots.head).item.showBeard) {
                         LoadItem(beardStyle, ItemType.Beard);
                     } else {
-                        UnloadSlot(Item.EquipmentSlots.beard);
+                        UnloadSlot(EquipmentSlots.beard);
                     }
                 } else {
-                    UnloadSlot(Item.EquipmentSlots.beard);
+                    UnloadSlot(EquipmentSlots.beard);
                 }
             } else {
                 LoadItem(4, ItemType.BodyParts); // head 
@@ -314,21 +314,21 @@ namespace RPGCharacters {
                 if (gender == 0) {
                     LoadItem(beardStyle, ItemType.Beard);
                 } else {
-                    UnloadSlot(Item.EquipmentSlots.beard);
+                    UnloadSlot(EquipmentSlots.beard);
                 }
             }
 
 
-            if (GetEquipmentSlot(Item.EquipmentSlots.body).inUse == false) {
+            if (GetEquipmentSlot(EquipmentSlots.body).inUse == false) {
                 LoadItem(3, ItemType.BodyParts); // torso 
             }
-            if (GetEquipmentSlot(Item.EquipmentSlots.hands).inUse == false) {
+            if (GetEquipmentSlot(EquipmentSlots.hands).inUse == false) {
                 LoadItem(5, ItemType.BodyParts); // hands
             }
-            if (GetEquipmentSlot(Item.EquipmentSlots.legs).inUse == false) {
+            if (GetEquipmentSlot(EquipmentSlots.legs).inUse == false) {
                 LoadItem(1, ItemType.BodyParts); // legs
             }
-            if (GetEquipmentSlot(Item.EquipmentSlots.feet).inUse == false) {
+            if (GetEquipmentSlot(EquipmentSlots.feet).inUse == false) {
                 LoadItem(2, ItemType.BodyParts); // feet
             }
         }
@@ -374,19 +374,19 @@ namespace RPGCharacters {
         }
         void SetupSlots() {
             equipmentSlots.Clear();
-            equipmentSlots.Add(new EquipmentSlot() { slot = Item.EquipmentSlots.body });
-            equipmentSlots.Add(new EquipmentSlot() { slot = Item.EquipmentSlots.feet });
-            equipmentSlots.Add(new EquipmentSlot() { slot = Item.EquipmentSlots.hair, container = armature.transform.FindDeepChild("EQ_Head") });
-            equipmentSlots.Add(new EquipmentSlot() { slot = Item.EquipmentSlots.head, container = armature.transform.FindDeepChild("EQ_Head") });
-            equipmentSlots.Add(new EquipmentSlot() { slot = Item.EquipmentSlots.legs });
-            equipmentSlots.Add(new EquipmentSlot() { slot = Item.EquipmentSlots.mainhand, container = armature.transform.FindDeepChild("EQ_MainHand") });
-            equipmentSlots.Add(new EquipmentSlot() { slot = Item.EquipmentSlots.offhand, container = armature.transform.FindDeepChild("EQ_OffHand") });
-            equipmentSlots.Add(new EquipmentSlot() { slot = Item.EquipmentSlots.hands });
-            equipmentSlots.Add(new EquipmentSlot() { slot = Item.EquipmentSlots.beard });
-            equipmentSlots.Add(new EquipmentSlot() { slot = Item.EquipmentSlots.eyebrow });
-            equipmentSlots.Add(new EquipmentSlot() { slot = Item.EquipmentSlots.neck });
-            equipmentSlots.Add(new EquipmentSlot() { slot = Item.EquipmentSlots.accessory });
-            equipmentSlots.Add(new EquipmentSlot() { slot = Item.EquipmentSlots.back, container = armature.transform.FindDeepChild("EQ_Back") });
+            equipmentSlots.Add(new EquipmentSlot() { slot = EquipmentSlots.body });
+            equipmentSlots.Add(new EquipmentSlot() { slot = EquipmentSlots.feet });
+            equipmentSlots.Add(new EquipmentSlot() { slot = EquipmentSlots.hair, container = armature.transform.FindDeepChild("EQ_Head") });
+            equipmentSlots.Add(new EquipmentSlot() { slot = EquipmentSlots.head, container = armature.transform.FindDeepChild("EQ_Head") });
+            equipmentSlots.Add(new EquipmentSlot() { slot = EquipmentSlots.legs });
+            equipmentSlots.Add(new EquipmentSlot() { slot = EquipmentSlots.mainhand, container = armature.transform.FindDeepChild("EQ_MainHand") });
+            equipmentSlots.Add(new EquipmentSlot() { slot = EquipmentSlots.offhand, container = armature.transform.FindDeepChild("EQ_OffHand") });
+            equipmentSlots.Add(new EquipmentSlot() { slot = EquipmentSlots.hands });
+            equipmentSlots.Add(new EquipmentSlot() { slot = EquipmentSlots.beard });
+            equipmentSlots.Add(new EquipmentSlot() { slot = EquipmentSlots.eyebrow });
+            equipmentSlots.Add(new EquipmentSlot() { slot = EquipmentSlots.neck });
+            equipmentSlots.Add(new EquipmentSlot() { slot = EquipmentSlots.accessory });
+            equipmentSlots.Add(new EquipmentSlot() { slot = EquipmentSlots.back, container = armature.transform.FindDeepChild("EQ_Back") });
         }
 
     }

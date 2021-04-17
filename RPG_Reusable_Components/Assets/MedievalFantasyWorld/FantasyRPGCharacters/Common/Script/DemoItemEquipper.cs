@@ -112,17 +112,17 @@ namespace RPGCharacters {
             if (selectedCharacter != null) {
                 float buttonSize = Screen.height * 0.1f;
                 float startY = Screen.height * 0.2f;
-                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(Item.EquipmentSlots.head), Screen.width - Screen.width * 0.20f, startY + buttonSize * 0, buttonSize);
-                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(Item.EquipmentSlots.neck), Screen.width - Screen.width * 0.20f, startY + buttonSize * 1, buttonSize);
-                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(Item.EquipmentSlots.back), Screen.width - Screen.width * 0.20f + buttonSize, startY + buttonSize * 1, buttonSize);
-                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(Item.EquipmentSlots.body), Screen.width - Screen.width * 0.20f, startY + buttonSize * 2, buttonSize);
-                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(Item.EquipmentSlots.mainhand), Screen.width - Screen.width * 0.2f - buttonSize, startY + buttonSize * 2, buttonSize);
-                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(Item.EquipmentSlots.offhand), Screen.width - Screen.width * 0.2f + buttonSize, startY + buttonSize * 2, buttonSize);
+                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(EquipmentSlots.head), Screen.width - Screen.width * 0.20f, startY + buttonSize * 0, buttonSize);
+                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(EquipmentSlots.neck), Screen.width - Screen.width * 0.20f, startY + buttonSize * 1, buttonSize);
+                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(EquipmentSlots.back), Screen.width - Screen.width * 0.20f + buttonSize, startY + buttonSize * 1, buttonSize);
+                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(EquipmentSlots.body), Screen.width - Screen.width * 0.20f, startY + buttonSize * 2, buttonSize);
+                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(EquipmentSlots.mainhand), Screen.width - Screen.width * 0.2f - buttonSize, startY + buttonSize * 2, buttonSize);
+                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(EquipmentSlots.offhand), Screen.width - Screen.width * 0.2f + buttonSize, startY + buttonSize * 2, buttonSize);
 
-                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(Item.EquipmentSlots.hands), Screen.width - Screen.width * 0.2f - buttonSize, startY + buttonSize * 3, buttonSize);
-                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(Item.EquipmentSlots.legs), Screen.width - Screen.width * 0.2f, startY + buttonSize * 3, buttonSize);
+                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(EquipmentSlots.hands), Screen.width - Screen.width * 0.2f - buttonSize, startY + buttonSize * 3, buttonSize);
+                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(EquipmentSlots.legs), Screen.width - Screen.width * 0.2f, startY + buttonSize * 3, buttonSize);
 
-                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(Item.EquipmentSlots.feet), Screen.width - Screen.width * 0.2f, startY + buttonSize * 4, buttonSize);
+                DrawEquipmentSlot(selectedCharacter.GetEquipmentSlot(EquipmentSlots.feet), Screen.width - Screen.width * 0.2f, startY + buttonSize * 4, buttonSize);
             }
         }
         void DrawEquipmentSlot(CharacterBase.EquipmentSlot s, float x, float y, float size) {

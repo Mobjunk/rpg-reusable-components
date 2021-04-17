@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RPGCharacters;
-public class PlayerCharacter :  CharacterBase{
+public class PlayerCharacter :  CharacterBase {
     void SaveItems() {
         string itemsList = "";
         foreach (EquipmentSlot e in equipmentSlots) {
