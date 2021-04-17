@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(CharacterArmatureManager), typeof(CharacterDesignManager))]
 [RequireComponent(typeof(CharacterAttackManager), typeof(CharacterStateManager), typeof(CharacterEquipmentManager))]
@@ -13,19 +9,34 @@ public class CharacterManager : MonoBehaviour
     [SerializeField] private CharacterAttackManager characterAttackManager;
     [SerializeField] private GameObject nameCanvas;
     [SerializeField] private TMP_Text nameText;
-    
-    public virtual void Awake()
+
+    private CharacterAction characterAction;
+
+    public void SetAction(CharacterAction action)
     {
-        //Debug.Log("Character wake base");
+        if (characterAction != null)
+        {
+            if (!characterAction.Interruptable()) return;
+            characterAction.OnStop();
+        }
+
+        characterAction = action;
+        characterAction?.OnStart();
     }
+    
+    public virtual void Awake() { }
     
     public virtual void Start()
     {
-        //Debug.Log("Character start base");
         characterAttackManager = GetComponent<CharacterAttackManager>();
         
         if(GetType() == typeof(Player))
             characterInputManager.OnCharacterAttack = characterAttackManager.Attack;
+    }
+
+    public virtual void Update()
+    {
+        characterAction?.Update();
     }
 
     /// <summary>

@@ -323,16 +323,21 @@
         <e p="Scripts" t="Include">
           <e p="ButtonManager.cs" t="Include" />
           <e p="Character" t="Include">
-            <e p="CharacterArmatureManager.cs" t="Include" />
-            <e p="CharacterAttackManager.cs" t="Include" />
-            <e p="CharacterControlsManager.cs" t="Include" />
-            <e p="CharacterDesignManager.cs" t="Include" />
-            <e p="CharacterEquipmentManager.cs" t="Include" />
-            <e p="CharacterInputManager.cs" t="Include" />
+            <e p="Action" t="Include">
+              <e p="CharacterAction.cs" t="Include" />
+              <e p="ICharacterAction.cs" t="Include" />
+            </e>
+            <e p="Attack" t="Include">
+              <e p="CharacterAttackManager.cs" t="Include" />
+            </e>
             <e p="CharacterManager.cs" t="Include" />
-            <e p="CharacterMovementManager.cs" t="Include" />
-            <e p="CharacterStateManager.cs" t="Include" />
-            <e p="ICharacterMovement.cs" t="Include" />
+            <e p="Design" t="Include">
+              <e p="CharacterArmatureManager.cs" t="Include" />
+              <e p="CharacterDesignManager.cs" t="Include" />
+            </e>
+            <e p="Equipment" t="Include">
+              <e p="CharacterEquipmentManager.cs" t="Include" />
+            </e>
             <e p="impl" t="Include">
               <e p="Npc" t="Include">
                 <e p="Npc.cs" t="Include" />
@@ -341,6 +346,17 @@
               <e p="Player" t="Include">
                 <e p="Player.cs" t="Include" />
               </e>
+            </e>
+            <e p="Input" t="Include">
+              <e p="CharacterControlsManager.cs" t="Include" />
+              <e p="CharacterInputManager.cs" t="Include" />
+            </e>
+            <e p="Movement" t="Include">
+              <e p="CharacterMovementManager.cs" t="Include" />
+              <e p="ICharacterMovement.cs" t="Include" />
+            </e>
+            <e p="States" t="Include">
+              <e p="CharacterStateManager.cs" t="Include" />
             </e>
           </e>
           <e p="GameManager.cs" t="Include" />
