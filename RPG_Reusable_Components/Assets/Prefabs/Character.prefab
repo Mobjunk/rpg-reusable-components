@@ -893,6 +893,36 @@ Transform:
   m_Father: {fileID: 63655012170195997}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1206805665596734201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2045519045931833449}
+  m_Layer: 0
+  m_Name: Raycacst position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2045519045931833449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206805665596734201}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.185, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2608928010816067144}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1299778442212565828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1808,6 +1838,7 @@ GameObject:
   - component: {fileID: 574624215796297602}
   - component: {fileID: 7529690297968157987}
   - component: {fileID: 7931842104295506473}
+  - component: {fileID: 2888894036274951902}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -1835,6 +1866,7 @@ Transform:
   - {fileID: 6416352256029987928}
   - {fileID: 8351251154400334190}
   - {fileID: 1591083822382832964}
+  - {fileID: 2045519045931833449}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1870,8 +1902,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterInputManager: {fileID: 3001786066346821853}
   characterAttackManager: {fileID: 7931842104295506473}
-  nameCanvas: {fileID: 3186077384494736279}
-  nameText: {fileID: 4023671420124756146}
   characterMovementManager: {fileID: 7529690297968157987}
   username: Nighel
 --- !u!114 &81463571900011356
@@ -2053,6 +2083,7 @@ MonoBehaviour:
   rotateRight: 100
   run: 304
   jumping: 32
+  interaction: 102
 --- !u!114 &3001786066346821853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2120,6 +2151,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a013f19f48f3e244841a8fcddc4ee29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2888894036274951902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2611343520028817596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fc3e931e5de1a4b885944cacb95c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameCanvas: {fileID: 3186077384494736279}
+  nameText: {fileID: 4023671420124756146}
 --- !u!1 &2611438168445437906
 GameObject:
   m_ObjectHideFlags: 0

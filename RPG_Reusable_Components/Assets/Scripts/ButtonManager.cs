@@ -8,13 +8,15 @@ public class ButtonManager : MonoBehaviour
 {
     private CharacterManager characterManager;
     private CharacterDesignManager characterDesignManager;
+    private CharacterNameManager characterNameManager;
 
     [SerializeField] private InputField characterNameInput;
-    
+
     void Awake()
     {
         characterManager = GameObject.Find("Character").GetComponent<CharacterManager>();
         characterDesignManager = characterManager.GetComponent<CharacterDesignManager>();
+        characterNameManager = characterManager.GetComponent<CharacterNameManager>();
     }
 
     public void SwitchRace(int race)
@@ -69,10 +71,8 @@ public class ButtonManager : MonoBehaviour
         Player player = (Player) characterManager;
         player.Username = currentName;
         
-        characterManager.SetNameUI(player.Username);
+        characterNameManager.SetNameUI(player.Username);
         Utility.AddSceneIfNotLoaded("Plain");
         Utility.UnloadScene("Character Customization");
-
-        characterManager.transform.position = new Vector3(7.427078f, 0.07890832f, -16.09949f);
     }
 }

@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterInputManager), typeof(CharacterMovementManager))]
+[RequireComponent(typeof(CharacterInputManager), typeof(CharacterMovementManager), typeof(CharacterInteractionManager))]
+[RequireComponent(typeof(CharacterControlsManager))]
 public class Player : CharacterManager
 {
     [SerializeField] private CharacterMovementManager characterMovementManager;
@@ -19,7 +20,6 @@ public class Player : CharacterManager
         base.Awake();
         
         characterInputManager = GetComponent<CharacterInputManager>();
-        //characterInputManager.enabled = false;
         characterMovementManager = GetComponent<CharacterMovementManager>();
     }
 
@@ -28,7 +28,5 @@ public class Player : CharacterManager
         base.Start();
 
         characterInputManager.OnCharacterMovement = characterMovementManager.Move;
-        
-        //Debug.Log("Player start");
     }
 }

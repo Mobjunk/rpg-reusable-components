@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class CharacterControlsManager : MonoBehaviour
 {
-    public KeyCode forwards, backwards, rotateLeft, rotateRight, run, jumping;
+    public KeyCode forwards, backwards, rotateLeft, rotateRight, run, jumping, interaction;
     
-    //TODO: Make it so players can customize the controls
+    public delegate void KeyCodeChange();
+    
+    public KeyCodeChange OnKeyCodeChange = delegate {  };
+
+    public void ChangeKeyCode(out KeyCode currentKey, KeyCode keyCode)
+    {
+        currentKey = keyCode;
+        OnKeyCodeChange();
+    }
 }

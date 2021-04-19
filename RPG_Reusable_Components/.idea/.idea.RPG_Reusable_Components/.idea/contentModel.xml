@@ -330,6 +330,7 @@
             <e p="Attack" t="Include">
               <e p="CharacterAttackManager.cs" t="Include" />
             </e>
+            <e p="CharacterInteractionManager.cs" t="Include" />
             <e p="CharacterManager.cs" t="Include" />
             <e p="Design" t="Include">
               <e p="CharacterArmatureManager.cs" t="Include" />
@@ -355,11 +356,18 @@
               <e p="CharacterMovementManager.cs" t="Include" />
               <e p="ICharacterMovement.cs" t="Include" />
             </e>
+            <e p="Name" t="Include">
+              <e p="CharacterNameManager.cs" t="Include" />
+            </e>
             <e p="States" t="Include">
               <e p="CharacterStateManager.cs" t="Include" />
             </e>
           </e>
           <e p="GameManager.cs" t="Include" />
+          <e p="Interaction" t="Include">
+            <e p="ObjectData.cs" t="Include" />
+            <e p="ObjectInteractionManager.cs" t="Include" />
+          </e>
           <e p="Item" t="Include">
             <e p="Equipment" t="Include">
               <e p="EquipmentSlot.cs" t="Include" />
@@ -369,6 +377,7 @@
             <e p="ItemManager.cs" t="Include" />
             <e p="ItemType.cs" t="Include" />
           </e>
+          <e p="UiControlsManager.cs" t="Include" />
           <e p="Utility" t="Include">
             <e p="CameraManager.cs" t="Include" />
             <e p="ClampName.cs" t="Include" />
