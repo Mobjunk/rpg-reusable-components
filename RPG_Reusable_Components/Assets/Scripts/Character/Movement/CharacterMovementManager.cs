@@ -4,6 +4,7 @@ using static CharacterStateManager;
 
 public class CharacterMovementManager : MonoBehaviour, ICharacterMovement
 {
+    private CharacterManager characterManager;
     private CharacterStateManager characterStateManager;
     private CharacterController characterController;
     private CharacterControlsManager characterControlsManager;
@@ -37,6 +38,7 @@ public class CharacterMovementManager : MonoBehaviour, ICharacterMovement
 
     private void Awake()
     {
+        characterManager = GetComponent<CharacterManager>();
         characterController = GetComponent<CharacterController>();
         characterControlsManager = GetComponent<CharacterControlsManager>();
         characterStateManager = GetComponent<CharacterStateManager>();
@@ -45,6 +47,8 @@ public class CharacterMovementManager : MonoBehaviour, ICharacterMovement
 
     public void Move()
     {
+        if (characterManager.CharacterAction != null && !characterManager.CharacterAction.Interruptable()) return;
+        
         HandleInputs();
         HandleFalling();
         HandleMovement();
@@ -114,6 +118,9 @@ public class CharacterMovementManager : MonoBehaviour, ICharacterMovement
             characterVelocity = characterJumpingDirection * characterJumpingSpeed + Vector3.up * characterVelocityY;
         }*/
         
+        //Make sure it resets the player action when moving
+        if(characterState != CharacterStates.IDLE)
+            characterManager.SetAction(null);
         //Moving
         characterController.Move(characterVelocity * Time.deltaTime);
 

@@ -1,23 +1,28 @@
 using UnityEngine;
 
+[System.Serializable]
 public abstract class CharacterAction : ICharacterAction
 {
-    private CharacterStates state;
+    private CharacterManager characterManager;
+    private CharacterStateManager characterStateManager;
 
-    public CharacterStates State
+    public CharacterManager CharacterManager
     {
-        get => state;
-        set => state = value;
+        get => characterManager;
+        set => characterManager = value;
+    }
+
+    public abstract CharacterStates GetCharacterState();
+
+    public CharacterAction(CharacterManager characterManager)
+    {
+        CharacterManager = characterManager;
+        characterStateManager = characterManager.GetComponent<CharacterStateManager>();
     }
     
-    public CharacterStates GetCharacterState()
-    {
-        return State;
-    }
-
     public virtual void Update()
     {
-        
+        characterStateManager.SetCharacterState(GetCharacterState());
     }
 
     public virtual void OnStart()
@@ -27,7 +32,7 @@ public abstract class CharacterAction : ICharacterAction
 
     public virtual void OnStop()
     {
-        
+        Debug.LogError("Stopped the character action...");
     }
 
     public virtual bool Interruptable()

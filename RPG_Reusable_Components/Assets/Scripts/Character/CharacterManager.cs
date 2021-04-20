@@ -7,8 +7,15 @@ public class CharacterManager : MonoBehaviour
 {
     [SerializeField] protected CharacterInputManager characterInputManager;
     [SerializeField] private CharacterAttackManager characterAttackManager;
+    [SerializeField] private CharacterStateManager characterStateManager;
 
     private CharacterAction characterAction;
+
+    public CharacterAction CharacterAction
+    {
+        get => characterAction;
+        set => characterAction = value;
+    }
     
     public virtual void Awake() { }
     
@@ -30,6 +37,7 @@ public class CharacterManager : MonoBehaviour
         if (characterAction != null)
         {
             if (!characterAction.Interruptable()) return;
+            characterStateManager.SetCharacterState(CharacterStates.IDLE);
             characterAction.OnStop();
         }
 

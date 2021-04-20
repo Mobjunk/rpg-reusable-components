@@ -359,12 +359,21 @@
             <e p="Name" t="Include">
               <e p="CharacterNameManager.cs" t="Include" />
             </e>
+            <e p="Skills" t="Include">
+              <e p="HarvestSkillManager.cs" t="Include" />
+              <e p="impl" t="Include">
+                <e p="WoodcuttingManager.cs" t="Include" />
+              </e>
+            </e>
             <e p="States" t="Include">
               <e p="CharacterStateManager.cs" t="Include" />
             </e>
           </e>
           <e p="GameManager.cs" t="Include" />
           <e p="Interaction" t="Include">
+            <e p="impl" t="Include">
+              <e p="TreeManager.cs" t="Include" />
+            </e>
             <e p="ObjectData.cs" t="Include" />
             <e p="ObjectInteractionManager.cs" t="Include" />
           </e>
@@ -377,6 +386,7 @@
             <e p="ItemManager.cs" t="Include" />
             <e p="ItemType.cs" t="Include" />
           </e>
+          <e p="ObjectManager.cs" t="Include" />
           <e p="UiControlsManager.cs" t="Include" />
           <e p="Utility" t="Include">
             <e p="CameraManager.cs" t="Include" />

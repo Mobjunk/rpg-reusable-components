@@ -6,4 +6,7 @@ public class ObjectData : ScriptableObject
 {
     [Header("Interaction")]
     public string interactionMessage;
+
+    [Header("Secondary object")]
+    public GameObject secondaryObject;
 }

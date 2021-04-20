@@ -7,6 +7,7 @@ using UnityEngine;
 public class Player : CharacterManager
 {
     [SerializeField] private CharacterMovementManager characterMovementManager;
+    [SerializeField] private CharacterInteractionManager characterInteractionManager;
     [SerializeField] private string username;
 
     public string Username
@@ -21,6 +22,7 @@ public class Player : CharacterManager
         
         characterInputManager = GetComponent<CharacterInputManager>();
         characterMovementManager = GetComponent<CharacterMovementManager>();
+        characterInteractionManager = GetComponent<CharacterInteractionManager>();
     }
 
     public override void Start()
@@ -28,5 +30,6 @@ public class Player : CharacterManager
         base.Start();
 
         characterInputManager.OnCharacterMovement = characterMovementManager.Move;
+        characterInputManager.OnCharacterInteraction = characterInteractionManager.OnCharacterInteraction;
     }
 }

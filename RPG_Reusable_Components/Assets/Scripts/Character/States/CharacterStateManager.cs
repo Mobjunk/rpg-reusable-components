@@ -35,5 +35,6 @@ public enum CharacterStates
     JUMPING,
     ATTACKING_MELEE,
     ATTACKING_MAGIC,
-    ATTACKING_RANGED
+    ATTACKING_RANGED,
+    WOODCUTTING,
 }
