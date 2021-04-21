@@ -18,13 +18,19 @@ public class WoodcuttingManager : HarvestSkillManager
 
     public override void OnStart()
     {
+        base.OnStart();
         if (!HasRequirements())
         {
             //TODO: Do something...
             return;
         }
-        
+
         Debug.Log("Start woodcutting...");
+    }
+
+    public override int EquipmentId()
+    {
+        return 155;
     }
 
     public override int TimeRequired()
@@ -40,13 +46,14 @@ public class WoodcuttingManager : HarvestSkillManager
     public override void ReceiveItem()
     {
         Debug.Log("Receive item...");
-        
         ObjectManager.Instance().ReplaceGameObject(interactedObject, objectData.secondaryObject, 5);
         CharacterManager.SetAction(null);
     }
 
     public override bool Successful()
     {
-        return true;
+        int randomRoll = Random.Range(0, 100);
+        Debug.LogError("randomRoll: " + randomRoll);
+        return randomRoll >= 75;
     }
 }

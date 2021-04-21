@@ -8,7 +8,8 @@ public class ItemManager : Singleton<ItemManager>
     
     [HideInInspector] public bool loadAllItemsMode = false;
 
-        
+    
+    
     public Item LoadItem(CharacterArmatureManager armatureManager, CharacterDesignManager designManager, CharacterEquipmentManager equipmentManager, int itemId) {
         return LoadItem(armatureManager, designManager, equipmentManager, itemId, ItemType.Equipment);
     }

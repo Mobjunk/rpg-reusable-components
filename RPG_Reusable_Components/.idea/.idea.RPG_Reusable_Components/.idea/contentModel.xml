@@ -8,6 +8,32 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="_www.unityassetcollection.com.txt" t="Include" />
+        <e p="Kevin Iglesias" t="Include">
+          <e p="IKHelperTool" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="IKHelperTool.cs" t="Include" />
+              <e p="IKHelperToolCustomInspector.cs" t="Include" />
+              <e p="IKHelperToolSequenceSMB.cs" t="Include" />
+              <e p="IKHelperToolSMB.cs" t="Include" />
+              <e p="IKHelperToolSMBRemover.cs" t="Include" />
+              <e p="IKHelperToolUtils.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Villager Animations Pack" t="Include">
+            <e p="Example Scene" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="BucketRoute.cs" t="Include" />
+                <e p="BucketRouteAnimator.cs" t="Include" />
+                <e p="CookingScript.cs" t="Include" />
+                <e p="CookingSMB.cs" t="Include" />
+                <e p="GatherResource.cs" t="Include" />
+                <e p="LiftScript.cs" t="Include" />
+                <e p="LiftSMB.cs" t="Include" />
+                <e p="RunningVillagers.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="MedievalFantasyWorld" t="Include">
           <e p="Common" t="Include">
             <e p="DoubleSided.shader" t="Include" />
@@ -38,6 +64,81 @@
               </e>
             </e>
             <e p="readme.txt" t="Include" />
+          </e>
+        </e>
+        <e p="ootii" t="Include">
+          <e p="Archery_ReadMe.txt" t="Include" />
+          <e p="Assets" t="Include">
+            <e p="Framework_v1" t="Include">
+              <e p="Code" t="Include">
+                <e p="Actors" t="Include">
+                  <e p="Combat" t="Include">
+                    <e p="CombatHit.cs" t="Include" />
+                  </e>
+                  <e p="LifeCores" t="Include">
+                    <e p="ArrowCore.cs" t="Include" />
+                    <e p="BowCore.cs" t="Include" />
+                    <e p="ItemCore.cs" t="Include" />
+                    <e p="ProjectileCore.cs" t="Include" />
+                    <e p="WeaponCore.cs" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+            <e p="MotionControllerPacks" t="Include">
+              <e p="Archery" t="Include">
+                <e p="Code" t="Include">
+                  <e p="Actors" t="Include">
+                    <e p="Motions" t="Include">
+                      <e p="ArcheryPackDefinition.cs" t="Include" />
+                      <e p="BasicArcheryMotion.cs" t="Include" />
+                      <e p="BasicRangedAttack.cs" t="Include" />
+                      <e p="Bow_Dodge.cs" t="Include" />
+                      <e p="Bow_MotionBase.cs" t="Include" />
+                    </e>
+                  </e>
+                </e>
+                <e p="Version.txt" t="Include" />
+              </e>
+            </e>
+            <e p="ootii.asmdef" t="Include" />
+            <e p="Skirmishes" t="Include">
+              <e p="Code" t="Include">
+                <e p="Actors" t="Include">
+                  <e p="Combat" t="Include">
+                    <e p="Combatant.cs" t="Include" />
+                    <e p="CombatFilter.cs" t="Include" />
+                    <e p="CombatHit.cs" t="Include" />
+                    <e p="CombatManager.cs" t="Include" />
+                    <e p="CombatManagerCore.cs" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="Editor" t="Include">
+            <e p="Framework_v1" t="Include">
+              <e p="Actors" t="Include">
+                <e p="LifeCores" t="Include">
+                  <e p="ArrowCoreEditor.cs" t="Include" />
+                  <e p="BowCoreEditor.cs" t="Include" />
+                  <e p="ProjectileCoreEditor.cs" t="Include" />
+                  <e p="WeaponCoreEditor.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="MotionControllerPacks" t="Include">
+              <e p="Archery" t="Include">
+                <e p="ArcheryMPEditorSymbol.cs" t="Include" />
+                <e p="Setup" t="Include">
+                  <e p="ArcheryPackSetupModule.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="ootii.Editor.asmdef" t="Include" />
+            <e p="Skirmishes" t="Include">
+              <e p="CombatantEditor.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="RPG and MMO UI 6" t="Include">
@@ -429,6 +530,8 @@
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
+      <e p="ootii.csproj" t="IncludeRecursive" />
+      <e p="ootii.Editor.csproj" t="IncludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="RPG_Reusable_Components.sln" t="IncludeFlat" />
       <e p="Temp\Bin" t="ExcludeRecursive" />

@@ -8,6 +8,12 @@ public class CharacterManager : MonoBehaviour
     [SerializeField] protected CharacterInputManager characterInputManager;
     [SerializeField] private CharacterAttackManager characterAttackManager;
     [SerializeField] private CharacterStateManager characterStateManager;
+    [SerializeField] private CharacterEquipmentManager characterEquipmentManager;
+
+    public CharacterEquipmentManager GetCharacterEquipmentManager()
+    {
+        return characterEquipmentManager;
+    }
 
     private CharacterAction characterAction;
 
@@ -22,6 +28,8 @@ public class CharacterManager : MonoBehaviour
     public virtual void Start()
     {
         characterAttackManager = GetComponent<CharacterAttackManager>();
+        characterStateManager = GetComponent<CharacterStateManager>();
+        characterEquipmentManager = GetComponent<CharacterEquipmentManager>();
         
         if(GetType() == typeof(Player))
             characterInputManager.OnCharacterAttack = characterAttackManager.Attack;
