@@ -11,6 +11,7 @@ public class CharacterDesignManager : MonoBehaviour
     private ItemManager itemManager => ItemManager.Instance();
     private CharacterArmatureManager characterArmatureManager;
     private CharacterEquipmentManager characterEquipmentManager;
+    private CharacterStateManager characterStateManager;
     
     /// <summary>
     /// Hair style variables
@@ -137,6 +138,7 @@ public class CharacterDesignManager : MonoBehaviour
     {
         characterArmatureManager = GetComponent<CharacterArmatureManager>();
         characterEquipmentManager = GetComponent<CharacterEquipmentManager>();
+        characterStateManager = GetComponent<CharacterStateManager>();
     }
 
     /// <summary>
@@ -174,6 +176,7 @@ public class CharacterDesignManager : MonoBehaviour
         characterArmatureManager.UpdateRace();
         characterArmatureManager.SetupSlots();
         characterArmatureManager.SetupBody();
+        characterStateManager.UpdateAnimator();
     }
 
     /// <summary>

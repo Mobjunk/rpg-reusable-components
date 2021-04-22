@@ -2,7 +2,7 @@ using UnityEngine;
 
 [System.Serializable]
 public class EquipmentSlot {
-    public Item item;
+    public ItemInformation item;
     public EquipmentSlots slot;
     public Transform container;
     public GameObject instancedObject;

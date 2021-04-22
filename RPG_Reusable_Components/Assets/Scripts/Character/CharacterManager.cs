@@ -8,11 +8,19 @@ public class CharacterManager : MonoBehaviour
     [SerializeField] protected CharacterInputManager characterInputManager;
     [SerializeField] private CharacterAttackManager characterAttackManager;
     [SerializeField] private CharacterStateManager characterStateManager;
+    
     [SerializeField] private CharacterEquipmentManager characterEquipmentManager;
 
     public CharacterEquipmentManager GetCharacterEquipmentManager()
     {
         return characterEquipmentManager;
+    }
+
+    [SerializeField] private CharacterContainer characterInventory = new CharacterContainer(28);
+
+    public CharacterContainer GetChararacterInventory()
+    {
+        return characterInventory;
     }
 
     private CharacterAction characterAction;
@@ -30,9 +38,11 @@ public class CharacterManager : MonoBehaviour
         characterAttackManager = GetComponent<CharacterAttackManager>();
         characterStateManager = GetComponent<CharacterStateManager>();
         characterEquipmentManager = GetComponent<CharacterEquipmentManager>();
-        
-        if(GetType() == typeof(Player))
+
+        if (GetType() == typeof(Player))
+        {
             characterInputManager.OnCharacterAttack = characterAttackManager.Attack;
+        }
     }
 
     public virtual void Update()

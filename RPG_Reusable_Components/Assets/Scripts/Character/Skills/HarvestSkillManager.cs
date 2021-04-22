@@ -29,7 +29,13 @@ public abstract class HarvestSkillManager : CharacterAction
 
     public override void OnStart()
     {
+        Debug.Log("Start action...");
         base.OnStart();
+        if (!HasRequirements())
+        {
+            CharacterManager.SetAction(null);
+            return;
+        }
         currentMainHand = CharacterManager.GetCharacterEquipmentManager().GetEquipmentSlots()[(int)EquipmentSlots.mainhand].itemId;
         currentOffHand = CharacterManager.GetCharacterEquipmentManager().GetEquipmentSlots()[(int)EquipmentSlots.offhand].itemId;
         CharacterManager.GetCharacterEquipmentManager().EquipItem(EquipmentId());
@@ -40,7 +46,6 @@ public abstract class HarvestSkillManager : CharacterAction
         base.OnStop();
         reset();
     }
-
     public abstract int EquipmentId();
     public abstract int TimeRequired();
     public abstract bool HasRequirements();

@@ -7,7 +7,7 @@ using UnityEngine;
 public class CharacterInteractionManager : MonoBehaviour
 {
     private CharacterManager characterManager;
-    private Transform rayCastPosition;
+    private Transform[] rayCastPositions = new Transform[3];
 
     [SerializeField] private GameObject interactionMenu;
     [SerializeField] private ObjectInteractionManager interactionManager;
@@ -15,25 +15,38 @@ public class CharacterInteractionManager : MonoBehaviour
     private void Awake()
     {
         characterManager = GetComponent<CharacterManager>();
-        rayCastPosition = transform.GetChild(0);
+        for (int index = 0; index < 3; index++) rayCastPositions[index] = transform.GetChild(0).transform.GetChild(index);
     }
     
 
     private void Update()
     {
         interactionMenu.SetActive(false);
-        float maxDistance = 1f;
-        RaycastHit hit;
-        bool isHit = Physics.BoxCast(rayCastPosition.position, transform.localScale / 2, transform.forward, out hit, transform.rotation, maxDistance);
-        if (isHit)
-        {
-            interactionManager = hit.collider.GetComponent<ObjectInteractionManager>();
-            if (interactionManager != null) interactionMenu.SetActive(true);
-        }
+        if (HandleRayCast(rayCastPositions[0])) return;
+        if (HandleRayCast(rayCastPositions[1])) return;
+        if (HandleRayCast(rayCastPositions[2])) return;
     }
 
     public void OnCharacterInteraction()
     {
         interactionManager?.OnInteraction(characterManager);
+    }
+
+    public bool HandleRayCast(Transform raycastPosition)
+    {
+        float maxDistance = 1f;
+        RaycastHit hit;
+        bool succefullHit = Physics.BoxCast(raycastPosition.position, transform.localScale / 2, transform.forward, out hit, transform.rotation, maxDistance);
+        if (succefullHit && hit.collider != null)
+        {
+            interactionManager = hit.collider.GetComponent<ObjectInteractionManager>();
+            if (interactionManager != null)
+            {
+                interactionMenu.SetActive(true);
+                return true;
+            }
+        }
+
+        return false;
     }
 }

@@ -8,6 +8,11 @@ public class ObjectManager : Singleton<ObjectManager>
 {
     [SerializeField] private List<RespawnableObjects> respawnableObjects = new List<RespawnableObjects>();
 
+    private void Awake()
+    {
+        if (Application.targetFrameRate != 60) Application.targetFrameRate = 60;
+    }
+
     private void Update()
     {
         //Checks if there are any objects that need respawning

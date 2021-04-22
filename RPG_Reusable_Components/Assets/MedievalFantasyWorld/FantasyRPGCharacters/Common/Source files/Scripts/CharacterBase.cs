@@ -30,7 +30,7 @@ namespace RPGCharacters {
 
         [System.Serializable]
         public class EquipmentSlot {
-            public Item item;
+            public ItemInformation item;
             public EquipmentSlots slot;
             public Transform container;
             public GameObject instancedObject;
@@ -61,8 +61,8 @@ namespace RPGCharacters {
         private Transform equippedItemsParent; // to hold all loaded items
         private Transform bodyPartsParent; // to hold all body parts, hair etc.
 
-        public Item EquipItem(int itemId) { // use this to equip items
-            Item i = LoadItem(itemId);
+        public ItemInformation EquipItem(int itemId) { // use this to equip items
+            ItemInformation i = LoadItem(itemId);
             if(loadAllItemsMode==false)
                 SetupBody();
             return i;
@@ -75,7 +75,7 @@ namespace RPGCharacters {
                 }
             }
         }
-        public void UnequipItem(Item item) {
+        public void UnequipItem(ItemInformation item) {
             UnequipSlot(item.equipmentSlot);
         }
         public bool HasItemEquipped(int itemId) {
@@ -171,10 +171,10 @@ namespace RPGCharacters {
         }
 
         
-        public Item LoadItem(int itemId) {
+        public ItemInformation LoadItem(int itemId) {
             return LoadItem(itemId, ItemType.Equipment);
         }
-        public Item LoadItem(int itemId, ItemType itemType) {
+        public ItemInformation LoadItem(int itemId, ItemType itemType) {
             try {
                 if (itemId == 0) {
                     return null;
@@ -187,7 +187,7 @@ namespace RPGCharacters {
                 }
                 loadedItem = GameObject.Instantiate((GameObject)loadedObject) as GameObject;
 
-                Item item = loadedItem.GetComponent<Item>();
+                ItemInformation item = loadedItem.GetComponent<ItemInformation>();
                 EquipmentSlot slot = GetEquipmentSlot(item.equipmentSlot);
                 GameObject itemObject = null;
                 item.male.SetActive(false);

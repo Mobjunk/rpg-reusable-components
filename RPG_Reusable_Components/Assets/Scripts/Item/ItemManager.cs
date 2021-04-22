@@ -5,16 +5,19 @@ using UnityEngine;
 
 public class ItemManager : Singleton<ItemManager>
 {
-    
     [HideInInspector] public bool loadAllItemsMode = false;
+    public List<Item> itemDefinition = new List<Item>();
 
-    
-    
-    public Item LoadItem(CharacterArmatureManager armatureManager, CharacterDesignManager designManager, CharacterEquipmentManager equipmentManager, int itemId) {
+    private void Awake()
+    {
+        itemDefinition.Sort((a, b) => a.itemId.CompareTo(b.itemId));
+    }
+
+    public ItemInformation LoadItem(CharacterArmatureManager armatureManager, CharacterDesignManager designManager, CharacterEquipmentManager equipmentManager, int itemId) {
         return LoadItem(armatureManager, designManager, equipmentManager, itemId, ItemType.Equipment);
     }
     
-    public Item LoadItem(CharacterArmatureManager armatureManager, CharacterDesignManager designManager, CharacterEquipmentManager equipmentManager, int itemId, ItemType itemType)
+    public ItemInformation LoadItem(CharacterArmatureManager armatureManager, CharacterDesignManager designManager, CharacterEquipmentManager equipmentManager, int itemId, ItemType itemType)
     {
         try
         {
@@ -30,7 +33,7 @@ public class ItemManager : Singleton<ItemManager>
 
             loadedItem = Instantiate((GameObject) loadedObject);
 
-            Item item = loadedItem.GetComponent<Item>();
+            ItemInformation item = loadedItem.GetComponent<ItemInformation>();
             EquipmentSlot slot = equipmentManager.GetEquipmentSlot(item.equipmentSlot);
             GameObject itemObject = null;
             item.male.SetActive(false);

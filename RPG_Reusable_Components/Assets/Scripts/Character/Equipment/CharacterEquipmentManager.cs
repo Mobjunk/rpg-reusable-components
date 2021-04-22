@@ -44,8 +44,8 @@ public class CharacterEquipmentManager : MonoBehaviour
         //    characterArmatureManager.SetupBody();
     }
     
-    public Item EquipItem(int itemId) { // use this to equip items
-        Item item = itemManager.LoadItem(characterArmatureManager, characterDesignManager, this, itemId);
+    public ItemInformation EquipItem(int itemId) { // use this to equip items
+        ItemInformation item = itemManager.LoadItem(characterArmatureManager, characterDesignManager, this, itemId);
         //TODO: Find something
         //if(loadAllItemsMode==false)
         characterArmatureManager.SetupBody();
@@ -60,7 +60,7 @@ public class CharacterEquipmentManager : MonoBehaviour
         }
     }
     
-    public void UnEquipItem(Item item) {
+    public void UnEquipItem(ItemInformation item) {
         UnequipSlot(item.equipmentSlot);
     }
     

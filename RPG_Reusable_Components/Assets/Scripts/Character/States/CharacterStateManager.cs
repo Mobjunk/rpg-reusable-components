@@ -19,6 +19,11 @@ public class CharacterStateManager : MonoBehaviour
         animator = GetComponent<CharacterArmatureManager>().animator;
     }
 
+    public void UpdateAnimator()
+    {
+        animator = GetComponent<CharacterArmatureManager>().animator;
+    }
+
     private void Update()
     {
         if(animator != null) animator.SetInteger("AnimationState", (int)characterState);

@@ -16,18 +16,6 @@ public class WoodcuttingManager : HarvestSkillManager
         return CharacterStates.WOODCUTTING;
     }
 
-    public override void OnStart()
-    {
-        base.OnStart();
-        if (!HasRequirements())
-        {
-            //TODO: Do something...
-            return;
-        }
-
-        Debug.Log("Start woodcutting...");
-    }
-
     public override int EquipmentId()
     {
         return 155;
@@ -40,6 +28,12 @@ public class WoodcuttingManager : HarvestSkillManager
 
     public override bool HasRequirements()
     {
+        if (!CharacterManager.GetChararacterInventory().Contains(0))
+        {
+            ChatManager.Instance().AddMessage("You need an axe to chop this tree.");
+            return false;
+        }
+        
         return true;
     }
 
