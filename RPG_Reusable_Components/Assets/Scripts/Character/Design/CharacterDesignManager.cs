@@ -277,6 +277,7 @@ public class CharacterDesignManager : MonoBehaviour
             characterArmatureManager.UpdateRace();
             characterArmatureManager.SetupSlots();
             characterArmatureManager.SetupBody();
+            characterStateManager.UpdateAnimator();
         }
     }
 }

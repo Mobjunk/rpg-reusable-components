@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Character Customization.unity
     guid: a9cf120cdcb2ae34cae3b464103bd3f9
   - enabled: 1
-    path: Assets/Scenes/Village.unity
-    guid: 7a1726652f841da49ba03317f4076d3d
-  - enabled: 1
     path: Assets/Scenes/Plain.unity
     guid: 70350eea423dced4aae275188b80104c
   m_configObjects: {}

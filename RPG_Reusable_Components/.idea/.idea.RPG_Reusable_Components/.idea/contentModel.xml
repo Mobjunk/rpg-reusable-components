@@ -333,6 +333,13 @@
             <e p="CharacterManager.cs" t="Include" />
             <e p="Container" t="Include">
               <e p="CharacterContainer.cs" t="Include" />
+              <e p="ContainerManager.cs" t="Include" />
+              <e p="ContainerSlot.cs" t="Include" />
+              <e p="Interaction" t="Include">
+                <e p="CurrentDrag.cs" t="Include" />
+                <e p="DragHandler.cs" t="Include" />
+                <e p="DragSlot.cs" t="Include" />
+              </e>
             </e>
             <e p="Design" t="Include">
               <e p="CharacterArmatureManager.cs" t="Include" />
@@ -395,6 +402,7 @@
           <e p="UI" t="Include">
             <e p="ButtonManager.cs" t="Include" />
             <e p="ChatManager.cs" t="Include" />
+            <e p="MinimapManager.cs" t="Include" />
             <e p="RedstoneManager.cs" t="Include" />
             <e p="UiControlsManager.cs" t="Include" />
           </e>

@@ -9,6 +9,13 @@ public class Player : CharacterManager
     [SerializeField] private CharacterMovementManager characterMovementManager;
     [SerializeField] private CharacterInteractionManager characterInteractionManager;
     [SerializeField] private string username;
+    [SerializeField] private ContainerManager inventoryManager;
+
+    public ContainerManager InventoryManager
+    {
+        get => inventoryManager;
+        set => inventoryManager = value;
+    }
 
     public string Username
     {
@@ -22,6 +29,7 @@ public class Player : CharacterManager
         
         characterInputManager = GetComponent<CharacterInputManager>();
         characterMovementManager = GetComponent<CharacterMovementManager>();
+        characterMovementManager.enabled = false;
         characterInteractionManager = GetComponent<CharacterInteractionManager>();
     }
 
@@ -31,5 +39,11 @@ public class Player : CharacterManager
 
         characterInputManager.OnCharacterMovement = characterMovementManager.Move;
         characterInputManager.OnCharacterInteraction = characterInteractionManager.OnCharacterInteraction;
+    }
+
+    public void OnCompletion()
+    {
+        characterMovementManager.enabled = true;
+        CharacterInventory = new CharacterContainer(inventoryManager, 28);
     }
 }

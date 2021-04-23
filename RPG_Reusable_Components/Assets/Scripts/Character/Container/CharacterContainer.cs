@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class CharacterContainer
 {
     private ItemManager itemManager => ItemManager.Instance();
+
+    private ContainerManager containerManager;
     
     /// <summary>
     /// An array of all the items in the container
@@ -17,8 +19,9 @@ public class CharacterContainer
     /// Initialize the container
     /// </summary>
     /// <param name="size">The size of the container</param>
-    public CharacterContainer(int size)
+    public CharacterContainer(ContainerManager containerManager, int size)
     {
+        this.containerManager = containerManager;
         //Sets the array to the correct size
         items = new ItemData[size];
         //Fills array with empty item data
@@ -39,6 +42,8 @@ public class CharacterContainer
         //Spawns around the 2 items
         items[from] = Get(to);
         items[to] = temp;
+        
+        UpdateUI();
     }
 
     /// <summary>
@@ -168,6 +173,7 @@ public class CharacterContainer
             
             //Update the amount of the selected item
             item.amount = totalAmount;
+            UpdateUI();
             return true;
         }
         else
@@ -192,10 +198,12 @@ public class CharacterContainer
                     //Update the item amount
                     item.amount = 1;
                 }
+                UpdateUI();
                 return true;
             }
         }
         
+        UpdateUI();
         return true;
     }
 
@@ -259,135 +267,62 @@ public class CharacterContainer
                     item.amount = 0;
                 }
             }
+            UpdateUI();
             return true;
         }
         
+        UpdateUI();
         return true;
     }
 
     /// <summary>
-    /// Handles updating the inventory hot bar and inventory
+    /// Handles updating the container
     /// </summary>
     /// <param name="ui"></param>
-    public void UpdateUI(GameObject[] ui)
+    public void UpdateUI()
     {
-        //Loops though all the possible ui options
-        /*for (int i = 0; i < ui.Length; i++)
+        if (containerManager == null)
         {
-            //Loops though all the items
-            for (var index = 0; index < items.Length; index++)
+            Debug.LogError("Cannot update UI for a npc...");
+            return;
+        }
+        for (int index = 0; index < items.Length; index++)
+        {
+            ContainerSlot slot = containerManager.containerSlots[index];
+            
+            if (items[index] == null || items[index].item == null)
             {
-                //Grabs the player
-                var player = GameManager.playerObject.GetComponent<Player>();
-                //Grabs how many children there are in the ui component
-                var childCount = ui[i].transform.childCount;
-                //If the index (aka item slot) is higher then the child count
-                if (index >= childCount) continue;
-                
-                //Grab the slot its trying to update
-                var slot = ui[i].transform.GetChild(index);
-
-                //Handles highlighting the slot in the bottom inventory hotbar
-                if (index < 9 && i == 0 && ui.Length > 1)
-                {
-                    var slotImage = slot.GetComponent<Image>();
-                    if(index != player.inventorySlot)
-                     
-                        slotImage.color = new Color(1, 1, 1, 0.588f);
-                    else
-                        slotImage.color = new Color(1, 1, 1, 1);
-                }
-                
-                //Grab all the required children from the item slot
-                var canvas = slot.GetChild(0);
-                var image = canvas.GetChild(0);
-                var text = image.GetChild(0);
-                var bullets = image.GetChild(1);
-                var durability = image.GetChild(2);
-
-                //Grabs the required components from the item slot
-                var itemSprite = image.GetComponent<Image>();
-                var itemAmount = text.GetComponent<Text>();
-                var durabilityBar = durability.GetChild(1).GetComponent<Image>();
-
-                var itemSlot = ui.Length == 1 ? index + 9 : index;
-                var item = items[itemSlot];
-
-                //Checks if the item data or item is null
-                if (item == null || item.item == null)
-                {
-                    durability.gameObject.SetActive(false);
-                    bullets.gameObject.SetActive(false);
-                    itemSprite.enabled = false;
-                    itemAmount.enabled = false;
-                }
-                else
-                {
-                    //Disable the bullet section
-                    bullets.gameObject.SetActive(false);
-                    
-                    //Enables the required comps
-                    itemSprite.enabled = true;
-                    itemAmount.enabled = true;
-                    
-                    //Update the item sprite
-                    itemSprite.sprite = item.item.uiSprite;
-                    
-                    //How many of the items the player has
-                    var amount = $"{item.amount}";
-                    
-                    //Checks if the item has a gun attached to it
-                    if (item.item.gun != null)
-                    {
-                        //Grabs the weapon the player is wearing
-                        var weapon = player.gun.Get(player.gun.GetWeapon(itemSlot), itemSlot);
-                        //Checks if the weapon isn't null
-                        if (weapon != null)
-                        {
-                            //Enables the buttom sprites
-                            bullets.gameObject.SetActive(true);
-                            //Updates the amount of bullets the player has in his inventory
-                            amount = $"{weapon.bulletsInChamber}/{player.inventory.GetAmountFromItem(weapon.gun.bullets.itemId)}";
-                        }
-                    }
-                    //Dont show the amount of non stackable objects
-                    else if (!item.item.stackable) amount = "";
-
-                    //Checks if the item is a gun or tool
-                    if (item.item.gun != null || item.item.tool != null)
-                    {
-                        //Grabs the gun or tool data
-                        var gun = player.gun.Get(player.gun.GetWeapon(itemSlot), itemSlot);
-                        var tool = player.tool.Get(player.tool.GetWeapon(itemSlot), itemSlot);
-                        
-                        //Enable the durability 
-                        durability.gameObject.SetActive(true);
-
-                        //The start and current durability
-                        var startDurability = 0f;
-                        var currentDurability = 0f;
-
-                        //Checks if the gun isn't null
-                        //Then update the variables accordingly
-                        if (gun != null)
-                        {
-                            startDurability = gun.gun.weaponDurability;
-                            currentDurability = gun.gunDurability;
-                        }
-                        //Checks if the tool isn't null
-                        //Then update the variables accordingly
-                        else if (tool != null)
-                        {
-                            startDurability = tool.tool.weaponDurability;
-                            currentDurability = tool.toolDurability;
-                        }
-                        
-                        durabilityBar.fillAmount = currentDurability / startDurability;
-                    }
-                    
-                    itemAmount.text = amount;
-                }
+                slot.SetTextVisible(false);
+                slot.SetSpriteVisible(false);
+                continue;
             }
-        }*/
+            
+            int itemId = items[index].item.itemId;
+            int amount = items[index].amount;
+
+            if (itemId == -1)
+            {
+                slot.SetTextVisible(false);
+                slot.SetSpriteVisible(false);
+                continue;
+            }
+
+            Item item = ItemManager.Instance().itemDefinition[itemId];
+
+            if (item == null)
+            {
+                slot.SetTextVisible(false);
+                slot.SetSpriteVisible(false);
+                return;
+            }
+            
+            if (item.isStackable)
+            {
+                slot.SetTextVisible(true);
+                slot.SetText(amount.ToString());
+            }
+            slot.SetSpriteVisible(true);
+            slot.SetSprite(item.uiSprite);
+        }
     }
 }

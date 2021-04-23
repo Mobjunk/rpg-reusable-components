@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class RedstoneManager : MonoBehaviour
 {
-    private int currentRedstoneActive = 0;
+    private int currentRedstoneActive = 3;
     
     [SerializeField] private Sprite offSprite;
     [SerializeField] private Sprite onSprite;
@@ -19,6 +19,8 @@ public class RedstoneManager : MonoBehaviour
 
     public void SwitchRedstone(int newIndex)
     {
+        if(currentRedstoneActive == newIndex) return;
+        
         images[newIndex].sprite = onSprite;
         images[currentRedstoneActive].sprite = offSprite;
         currentRedstoneActive = newIndex;
