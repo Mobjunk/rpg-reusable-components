@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class WoodcuttingManager : HarvestSkillManager
 {
@@ -14,6 +16,11 @@ public class WoodcuttingManager : HarvestSkillManager
     public override CharacterStates GetCharacterState()
     {
         return CharacterStates.WOODCUTTING;
+    }
+
+    public override string StartMessage()
+    {
+        return "You swing your axe at the tree.";
     }
 
     public override int EquipmentId()
@@ -33,13 +40,12 @@ public class WoodcuttingManager : HarvestSkillManager
             ChatManager.Instance().AddMessage("You need an axe to chop this tree.");
             return false;
         }
-        
         return true;
     }
 
     public override void ReceiveItem()
     {
-        Debug.Log("Receive item...");
+        CharacterManager.GetChararacterInventory().Add(1);
         ObjectManager.Instance().ReplaceGameObject(interactedObject, objectData.secondaryObject, 5);
         CharacterManager.SetAction(null);
     }

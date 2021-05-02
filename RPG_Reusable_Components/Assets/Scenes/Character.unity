@@ -456,6 +456,7 @@ MonoBehaviour:
   loadAllItemsMode: 0
   itemDefinition:
   - {fileID: 11400000, guid: ee8f98884c2ae6e4d9733ff2a0d234df, type: 2}
+  - {fileID: 11400000, guid: e8e4ab6b3d9d49f4d900bc4ff9d04734, type: 2}
 --- !u!1001 &826521147
 PrefabInstance:
   m_ObjectHideFlags: 0

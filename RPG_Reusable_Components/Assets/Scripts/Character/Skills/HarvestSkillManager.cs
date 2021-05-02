@@ -36,6 +36,8 @@ public abstract class HarvestSkillManager : CharacterAction
             CharacterManager.SetAction(null);
             return;
         }
+
+        StartMessage();
         currentMainHand = CharacterManager.GetCharacterEquipmentManager().GetEquipmentSlots()[(int)EquipmentSlots.mainhand].itemId;
         currentOffHand = CharacterManager.GetCharacterEquipmentManager().GetEquipmentSlots()[(int)EquipmentSlots.offhand].itemId;
         CharacterManager.GetCharacterEquipmentManager().EquipItem(EquipmentId());
@@ -46,6 +48,8 @@ public abstract class HarvestSkillManager : CharacterAction
         base.OnStop();
         reset();
     }
+
+    public abstract string StartMessage();
     public abstract int EquipmentId();
     public abstract int TimeRequired();
     public abstract bool HasRequirements();

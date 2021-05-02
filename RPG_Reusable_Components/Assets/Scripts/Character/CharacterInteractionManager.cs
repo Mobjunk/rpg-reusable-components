@@ -10,7 +10,7 @@ public class CharacterInteractionManager : MonoBehaviour
     private Transform[] rayCastPositions = new Transform[3];
 
     [SerializeField] private GameObject interactionMenu;
-    [SerializeField] private ObjectInteractionManager interactionManager;
+    [SerializeField] private InteractionManager interactionManager;
 
     private void Awake()
     {
@@ -39,13 +39,13 @@ public class CharacterInteractionManager : MonoBehaviour
         bool succefullHit = Physics.BoxCast(raycastPosition.position, transform.localScale / 2, transform.forward, out hit, transform.rotation, maxDistance);
         if (succefullHit && hit.collider != null)
         {
-            interactionManager = hit.collider.GetComponent<ObjectInteractionManager>();
+            interactionManager = hit.collider.GetComponent<InteractionManager>();
             if (interactionManager != null)
             {
                 interactionMenu.SetActive(true);
                 return true;
             }
-        }
+        } else if (!succefullHit || hit.collider == null) interactionManager = null;
 
         return false;
     }

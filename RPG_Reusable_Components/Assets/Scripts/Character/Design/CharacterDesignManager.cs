@@ -270,7 +270,7 @@ public class CharacterDesignManager : MonoBehaviour
     /// </summary>
     public void RandomizeCharacter()
     {
-        Setup(UnityEngine.Random.Range(0, 3), UnityEngine.Random.Range(0, 1), UnityEngine.Random.Range(0, maxHairStyles), UnityEngine.Random.Range(0, maxBeardStyle), UnityEngine.Random.Range(0, 1), gameManager.skinColors[UnityEngine.Random.Range(0, gameManager.skinColors.Count - 1)], gameManager.eyeColors[UnityEngine.Random.Range(0, gameManager.eyeColors.Count - 1)], gameManager.hairColors[UnityEngine.Random.Range(0, gameManager.hairColors.Count - 1)], Color.black);
+        Setup(UnityEngine.Random.Range(0, 3), UnityEngine.Random.Range(0, 2), UnityEngine.Random.Range(0, maxHairStyles), UnityEngine.Random.Range(0, maxBeardStyle), UnityEngine.Random.Range(0, 1), gameManager.skinColors[UnityEngine.Random.Range(0, gameManager.skinColors.Count - 1)], gameManager.eyeColors[UnityEngine.Random.Range(0, gameManager.eyeColors.Count - 1)], gameManager.hairColors[UnityEngine.Random.Range(0, gameManager.hairColors.Count - 1)], Color.black);
         if (characterEquipmentManager != null)
         {
             characterEquipmentManager.UnEquipAll();

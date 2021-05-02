@@ -384,13 +384,20 @@
               <e p="AxeTrunkManager.cs" t="Include" />
               <e p="TreeManager.cs" t="Include" />
             </e>
-            <e p="ObjectData.cs" t="Include" />
-            <e p="ObjectInteractionManager.cs" t="Include" />
+            <e p="InteractionManager.cs" t="Include" />
+            <e p="Objects" t="Include">
+              <e p="ObjectData.cs" t="Include" />
+              <e p="ObjectInteractionManager.cs" t="Include" />
+            </e>
           </e>
           <e p="Item" t="Include">
             <e p="Equipment" t="Include">
               <e p="EquipmentSlot.cs" t="Include" />
               <e p="EquipmentSlots.cs" t="Include" />
+            </e>
+            <e p="GroundItems" t="Include">
+              <e p="GroundItem.cs" t="Include" />
+              <e p="GroundItemManager.cs" t="Include" />
             </e>
             <e p="Item.cs" t="Include" />
             <e p="ItemData.cs" t="Include" />
