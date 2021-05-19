@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Logs
   m_EditorClassIdentifier: 
   itemId: 1
-  uiSprite: {fileID: 21300000, guid: c45c428d939c8554db40e48e5d650286, type: 3}
+  uiSprite: {fileID: 21300000, guid: 92c39db9accb7694a865d431bd6fb4bc, type: 3}
   itemName: Logs
   itemDescription: Some logs.
   isStackable: 0
+  groundItem: {fileID: 11400000, guid: c1f761323afbee8458421a8a15931460, type: 2}
   fantasyId: -1

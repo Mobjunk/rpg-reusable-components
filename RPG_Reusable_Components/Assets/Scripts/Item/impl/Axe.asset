@@ -17,4 +17,5 @@ MonoBehaviour:
   itemName: Axe
   itemDescription: This is a axe to chop trees.
   isStackable: 0
+  groundItem: {fileID: 11400000, guid: ba0267d61e414fb40969804218a5abba, type: 2}
   fantasyId: 155

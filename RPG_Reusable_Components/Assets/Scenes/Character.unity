@@ -468,6 +468,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 1753403684605794, guid: bde2ad7b4fa5bdc488ac9fb87d1eb629, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1918111272366092, guid: bde2ad7b4fa5bdc488ac9fb87d1eb629, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -572,7 +576,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 26
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5495997657489462013, guid: bde2ad7b4fa5bdc488ac9fb87d1eb629, type: 3}
+    - {fileID: 3469865159699294096, guid: bde2ad7b4fa5bdc488ac9fb87d1eb629, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bde2ad7b4fa5bdc488ac9fb87d1eb629, type: 3}
 --- !u!114 &826521148 stripped
 MonoBehaviour:

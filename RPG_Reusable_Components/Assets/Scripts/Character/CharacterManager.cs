@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterAttackManager), typeof(CharacterStateManager), typeof(CharacterEquipmentManager))]
 public class CharacterManager : MonoBehaviour
 {
-    [SerializeField] protected CharacterInputManager characterInputManager;
+    [SerializeField] protected ICharacterInput characterInputManager;
     [SerializeField] private CharacterAttackManager characterAttackManager;
     [SerializeField] private CharacterStateManager characterStateManager;
     
@@ -47,7 +47,7 @@ public class CharacterManager : MonoBehaviour
 
         if (GetType() == typeof(Player))
         {
-            characterInputManager.OnCharacterAttack = characterAttackManager.Attack;
+            //characterInputManager.OnCharacterAttack = characterAttackManager.Attack;
         }
         else
         {

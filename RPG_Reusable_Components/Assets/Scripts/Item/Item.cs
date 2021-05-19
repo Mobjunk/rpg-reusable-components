@@ -10,5 +10,6 @@ public class Item : ScriptableObject
     public string itemName;
     public string itemDescription;
     public bool isStackable;
+    public GroundItem groundItem;
     [Header("Other system data")] public int fantasyId;
 }

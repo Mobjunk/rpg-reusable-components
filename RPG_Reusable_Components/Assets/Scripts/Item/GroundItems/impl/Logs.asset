@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 900289dbbbfda364fbb7e4fb0bbab0ad, type: 3}
-  m_Name: Axe
+  m_Name: Logs
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: ee8f98884c2ae6e4d9733ff2a0d234df, type: 2}
-  prefab: {fileID: 1489299540180788, guid: 5beb3765b27ad3848a5455ff53876dcb, type: 3}
-  updateScale: 1
-  updateRotation: 1
+  item: {fileID: 11400000, guid: e8e4ab6b3d9d49f4d900bc4ff9d04734, type: 2}
+  prefab: {fileID: 1443991991233524994, guid: 2002700aeb0d3bd4da0482a4e9927282, type: 3}
+  updateScale: 0
+  updateRotation: 0
+  sizeY: 0.25
