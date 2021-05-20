@@ -380,6 +380,7 @@
             </e>
           </e>
           <e p="GameManager.cs" t="Include" />
+          <e p="InteractableItem.cs" t="Include" />
           <e p="Interaction" t="Include">
             <e p="InteractionManager.cs" t="Include" />
             <e p="Items" t="Include">
@@ -395,7 +396,12 @@
             </e>
           </e>
           <e p="Item" t="Include">
+            <e p="AbstractItemData.cs" t="Include" />
+            <e p="Consumables" t="Include">
+              <e p="ConsumableItemData.cs" t="Include" />
+            </e>
             <e p="Equipment" t="Include">
+              <e p="EquipableItemData.cs" t="Include" />
               <e p="EquipmentSlot.cs" t="Include" />
               <e p="EquipmentSlots.cs" t="Include" />
             </e>
@@ -404,16 +410,19 @@
               <e p="GroundItemData.cs" t="Include" />
               <e p="GroundItemManager.cs" t="Include" />
             </e>
-            <e p="Item.cs" t="Include" />
             <e p="ItemData.cs" t="Include" />
-            <e p="ItemInformation.cs" t="Include" />
             <e p="ItemManager.cs" t="Include" />
-            <e p="ItemType.cs" t="Include" />
+            <e p="util" t="Include">
+              <e p="ItemInformation.cs" t="Include" />
+              <e p="ItemType.cs" t="Include" />
+            </e>
           </e>
           <e p="ObjectManager.cs" t="Include" />
           <e p="UI" t="Include">
+            <e p="ButtonHover.cs" t="Include" />
             <e p="ButtonManager.cs" t="Include" />
             <e p="ChatManager.cs" t="Include" />
+            <e p="DynamicOptionMenu.cs" t="Include" />
             <e p="MinimapManager.cs" t="Include" />
             <e p="RedstoneManager.cs" t="Include" />
           </e>
@@ -425,6 +434,7 @@
             <e p="WowCamera.cs" t="Include" />
           </e>
         </e>
+        <e p="TabBackManager.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
             <e p="LiberationSans - OFL.txt" t="Include" />

@@ -1,16 +1,22 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ItemManager : Singleton<ItemManager>
 {
     [HideInInspector] public bool loadAllItemsMode = false;
-    public List<Item> itemDefinition = new List<Item>();
+    public List<AbstractItemData> itemDefinition = new List<AbstractItemData>();
 
     private void Awake()
     {
         itemDefinition.Sort((a, b) => a.itemId.CompareTo(b.itemId));
+    }
+
+    public AbstractItemData ForName(string itemName)
+    {
+        return itemDefinition.FirstOrDefault(itemData => itemData.name.ToLower().Equals(itemName.ToLower()));
     }
 
     public ItemInformation LoadItem(CharacterArmatureManager armatureManager, CharacterDesignManager designManager, CharacterEquipmentManager equipmentManager, int itemId) {

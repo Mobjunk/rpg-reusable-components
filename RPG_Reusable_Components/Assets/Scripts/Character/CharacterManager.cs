@@ -9,7 +9,7 @@ public class CharacterManager : MonoBehaviour
     [SerializeField] private CharacterAttackManager characterAttackManager;
     [SerializeField] private CharacterStateManager characterStateManager;
     
-    [SerializeField] private CharacterEquipmentManager characterEquipmentManager;
+    public CharacterEquipmentManager characterEquipmentManager;
 
     public CharacterEquipmentManager GetCharacterEquipmentManager()
     {

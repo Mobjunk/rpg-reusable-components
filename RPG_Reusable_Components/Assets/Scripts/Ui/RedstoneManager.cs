@@ -19,10 +19,16 @@ public class RedstoneManager : MonoBehaviour
 
     public void SwitchRedstone(int newIndex)
     {
-        if(currentRedstoneActive == newIndex) return;
+        if (currentRedstoneActive == newIndex)
+        {
+            images[newIndex].sprite = offSprite;
+            TabBackManager.Instance().Toggle();
+            return;
+        }
         
+        if(!TabBackManager.Instance().currentlyOpen) TabBackManager.Instance().Toggle();
         images[newIndex].sprite = onSprite;
-        images[currentRedstoneActive].sprite = offSprite;
+        if(currentRedstoneActive != -1) images[currentRedstoneActive].sprite = offSprite;
         currentRedstoneActive = newIndex;
     }
 }

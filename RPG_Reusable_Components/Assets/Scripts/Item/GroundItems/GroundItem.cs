@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class GroundItem : ScriptableObject
 {
     [Header("Item")]
-    public Item item;
+    public AbstractItemData item;
     [Header("Prefab")]
     public GameObject prefab;
 

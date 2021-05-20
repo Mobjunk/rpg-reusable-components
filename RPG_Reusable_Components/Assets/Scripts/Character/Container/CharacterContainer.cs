@@ -1,13 +1,11 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
-[System.Serializable]
+[Serializable]
 public class CharacterContainer
 {
-    private ItemManager itemManager => ItemManager.Instance();
-
     private ContainerManager containerManager;
     
     /// <summary>
@@ -24,6 +22,7 @@ public class CharacterContainer
         this.containerManager = containerManager;
         //Sets the array to the correct size
         items = new ItemData[size];
+        
         //Fills array with empty item data
         for (int index = 0; index < size; index++)
             items[index] = new ItemData();
@@ -64,7 +63,7 @@ public class CharacterContainer
     /// <returns>If the player has the required items</returns>
     public bool Contains(int itemId, int amount = 1)
     {
-        return items.Where(i => i != null && i.item != null).Any(i => i.item.itemId == itemId && i.amount >= amount);
+        return items.Where(i => i != null && i.itemData != null).Any(i => i.itemData.itemId == itemId && i.amount >= amount);
     }
 
     /// <summary>
@@ -74,7 +73,7 @@ public class CharacterContainer
     /// <returns>Checks if the player has all the items in he list</returns>
     public bool ContainsAll(List<ItemData> itemsData)
     {
-        return itemsData.All(item => Contains(item.item.itemId, item.amount));
+        return itemsData.All(item => Contains(item.itemData.itemId, item.amount));
     }
 
     /// <summary>
@@ -88,9 +87,9 @@ public class CharacterContainer
         for (var index = 0; index < items.Length; index++)
         {
             //Checks if the itemdata or item is null
-            if (items[index] == null || items[index].item == null) continue;
+            if (items[index] == null || items[index].itemData == null) continue;
             //Checks if the ids match
-            if (items[index].item.itemId == id) return index;
+            if (items[index].itemData.itemId == id) return index;
         }
         return -1;
     }
@@ -102,7 +101,7 @@ public class CharacterContainer
     /// <returns>Grabs the amount of items you have in a certain slot</returns>
     public int GetAmount(int slot)
     {
-        return (from i in items where i != null && !i.item where Get(slot).item.itemId == i.item.itemId select i.amount).Sum();
+        return (from i in items where i != null && !i.itemData where Get(slot).itemData.itemId == i.itemData.itemId select i.amount).Sum();
     }
 
     /// <summary>
@@ -112,7 +111,7 @@ public class CharacterContainer
     /// <returns>Grabs the amount of items you have of a certain item id</returns>
     public int GetAmountFromItem(int id)
     {
-        return (from i in items where i != null && i.item != null where id == i.item.itemId select i.amount).Sum();
+        return (from i in items where i != null && i.itemData != null where id == i.itemData.itemId select i.amount).Sum();
     }
 
     /// <summary>
@@ -124,7 +123,7 @@ public class CharacterContainer
         //Loops though all the items
         //And checks if there is no item on that slot
         for (var index = 0; index < items.Length; index++)
-            if (items[index] == null || (items[index].item == null || items[index].item.itemId == -1)) return index;
+            if (items[index] == null || (items[index].itemData == null || items[index].itemData.itemId == -1)) return index;
         return -1;
     }
 
@@ -134,7 +133,7 @@ public class CharacterContainer
     /// <returns>Checks how many free slots the player has in the container</returns>
     public int FreeSlots()
     {
-        return items.Count(i => i == null || i.item == null);
+        return items.Count(i => i == null || i.itemData == null);
     }
 
     /// <summary>
@@ -144,27 +143,24 @@ public class CharacterContainer
     /// <param name="amount">The amount of the item you want</param>
     /// <param name="slot">The preferred slot you want to put the item in</param>
     /// <returns></returns>
-    public bool Add(int itemId, int amount = 1, int slot = -1)
+    public bool Add(AbstractItemData itemToAdd, int amount = 1, int slot = -1)
     {
-        //Grabs the item data which your trying to add
-        //And checks if the item is null
-        var itemToAdd = itemManager.itemDefinition[itemId];
         if (itemToAdd == null) return false;
         
         //Grabs the new slot your trying to add the item to
         //Checks if the item is stackable and has the item to grab the slot of that item
         //Also checks if the slot is -1
         var newSlot = slot == -1 ? FreeSlot() : slot;
-        if (itemToAdd.isStackable && Contains(itemId)) newSlot = GetSlot(itemId);
+        if (itemToAdd.stackable && Contains(itemToAdd.itemId)) newSlot = GetSlot(itemToAdd.itemId);
         if (newSlot == -1) return false;
 
         //Checks if the item is stackable
-        if (itemToAdd.isStackable)
+        if (itemToAdd.stackable)
         {
             //Grabs the item for the lot
             var item = items[newSlot];
             //Checks if the item inside the data is null and sets the new item
-            if (item.item == null) item.item = itemToAdd;
+            if (item.itemData == null) item.itemData = itemToAdd;
             
             //Grabs the updated total
             //Checks if the new amount is higher then the max in or under 1
@@ -193,7 +189,7 @@ public class CharacterContainer
                     if (index > 0) newSlot = FreeSlot();
                     //Grabs the item for the slot and if its null set the item
                     var item = items[newSlot];
-                    if (item.item == null) item.item = itemToAdd;
+                    if (item.itemData == null) item.itemData = itemToAdd;
                     
                     //Update the item amount
                     item.amount = 1;
@@ -214,33 +210,30 @@ public class CharacterContainer
     /// <param name="amount">The amount your trying to remove</param>
     /// <param name="preferredSlot">The preferred slot you want to remove the slot from</param>
     /// <returns>Handles removing items from the container</returns>
-    public bool Remove(int itemId, int amount = 1, int preferredSlot = -1)
+    public bool Remove(AbstractItemData itemToRemove, int amount = 1, int preferredSlot = -1)
     {
-        //Grabs the item your trying to remove
-        //And checks if that item actuall exists
-        var itemToRemove = itemManager.itemDefinition[itemId];
         if (itemToRemove == null) return false;
         
         //Grabs the slot for the item id
         //Checks if the slot isn't -1
-        var slot = GetSlot(itemId);
+        var slot = GetSlot(itemToRemove.itemId);
         if (slot == -1) return false;
         
         //Grabs the item for the slot
         var item = items[slot];
 
         //Checks if the item is stackable
-        if (itemToRemove.isStackable)
+        if (itemToRemove.stackable)
         {
             //Checks if the item data or item is null
-            if (item == null || item.item == null) return false;
+            if (item == null || item.itemData == null) return false;
             //Checks if the item amount is higher then the amount your trying to remove
             if (item.amount > amount)
                 item.amount -= amount;
             else
             {
                 //Sets the item to null and update the item amount
-                item.item = null;
+                item.itemData = null;
                 item.amount = 0;
             }
         }
@@ -250,20 +243,20 @@ public class CharacterContainer
             for (var index = 0; index < amount; index++)
             {
                 //Updates the slot
-                slot = GetSlot(itemId);
+                slot = GetSlot(itemToRemove.itemId);
                 //If its the first item and it has a preferred slot remove that instead
                 if (index == 0 && preferredSlot != -1)
                 {
                     //Grabs the item for the preferred slot
                     //And if the ids match set that slot
                     var inSlot = Get(preferredSlot);
-                    if (inSlot.item.itemId == itemId) slot = preferredSlot;
+                    if (inSlot.itemData.itemId == itemToRemove.itemId) slot = preferredSlot;
                 }
                 //If the slot isn't -1 set the data to null
                 if (slot != -1)
                 {
                     item = items[slot];
-                    item.item = null;
+                    item.itemData = null;
                     item.amount = 0;
                 }
             }
@@ -286,43 +279,54 @@ public class CharacterContainer
             Debug.LogError("Cannot update UI for a npc...");
             return;
         }
+
+        if (items.Length > containerManager.containerSlots.Count)
+        {
+            Debug.LogError($"Item array size is bigger then the container list [items.Length: {items.Length}, containerManager.containerSlots.Count: {containerManager.containerSlots.Count}]...");
+            return;
+        }
+        
         for (int index = 0; index < items.Length; index++)
         {
             ContainerSlot slot = containerManager.containerSlots[index];
             
-            if (items[index] == null || items[index].item == null)
+            if (items[index] == null || items[index].itemData == null)
             {
+                slot.SetInteractableItem(null);
                 slot.SetTextVisible(false);
                 slot.SetSpriteVisible(false);
                 continue;
             }
             
-            int itemId = items[index].item.itemId;
+            int itemId = items[index].itemData.itemId;
             int amount = items[index].amount;
 
             if (itemId == -1)
             {
+                slot.SetInteractableItem(null);
                 slot.SetTextVisible(false);
                 slot.SetSpriteVisible(false);
                 continue;
             }
 
-            Item item = ItemManager.Instance().itemDefinition[itemId];
+            AbstractItemData item = ItemManager.Instance().itemDefinition[itemId];
 
             if (item == null)
             {
+                slot.SetInteractableItem(null);
                 slot.SetTextVisible(false);
                 slot.SetSpriteVisible(false);
                 return;
             }
             
-            if (item.isStackable)
+            if (item.stackable)
             {
                 slot.SetTextVisible(true);
                 slot.SetText(amount.ToString());
             }
             slot.SetSpriteVisible(true);
             slot.SetSprite(item.uiSprite);
+            slot.SetInteractableItem(item);
         }
     }
 }

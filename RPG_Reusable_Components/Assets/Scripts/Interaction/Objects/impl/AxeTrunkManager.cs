@@ -10,7 +10,7 @@ public class AxeTrunkManager : ObjectInteractionManager
         if (!characterManager.GetChararacterInventory().Contains(0))
         {
             ChatManager.Instance().AddMessage("You take the axe out of the stump.");
-            characterManager.GetChararacterInventory().Add(0);
+            characterManager.GetChararacterInventory().Add(ItemManager.Instance().ForName("Axe"));
         } else ChatManager.Instance().AddMessage("You already have a axe, don't be greedy.");
     }
 }

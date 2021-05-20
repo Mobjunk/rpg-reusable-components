@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ContainerSlot : MonoBehaviour
+public class ContainerSlot : InteractableItem
 {
-    [SerializeField] private Image image;
-
     public void SetSprite(Sprite sprite)
     {
         image.sprite = sprite;

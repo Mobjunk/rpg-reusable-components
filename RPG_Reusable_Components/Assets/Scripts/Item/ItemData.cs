@@ -1,18 +1,18 @@
 [System.Serializable]
 public class ItemData
 {
-    public Item item;
+    public AbstractItemData itemData;
     public int amount;
 
     public ItemData()
     {
-        item = null;
+        itemData = null;
         amount = 0;
     }
 
-    public ItemData(Item item, int amount)
+    public ItemData(AbstractItemData itemData, int amount)
     {
-        this.item = item;
+        this.itemData = itemData;
         this.amount = amount;
     }
 }

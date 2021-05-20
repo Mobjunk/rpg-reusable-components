@@ -10,7 +10,7 @@ public class CharacterStateManager : MonoBehaviour
 
     public void SetCharacterState(CharacterStates state)
     {
-        Debug.Log("state: " + state);
+        //Debug.Log("state: " + state);
         characterState = state;
     }
 

@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: Logs
   m_EditorClassIdentifier: 
   itemId: 1
+  name: Logs
+  description: This are logs.
   uiSprite: {fileID: 21300000, guid: 92c39db9accb7694a865d431bd6fb4bc, type: 3}
-  itemName: Logs
-  itemDescription: Some logs.
-  isStackable: 0
+  value: 0
+  stackable: 0
+  options:
+  - Use
+  - Drop
+  - Examine
   groundItem: {fileID: 11400000, guid: c1f761323afbee8458421a8a15931460, type: 2}
-  fantasyId: -1

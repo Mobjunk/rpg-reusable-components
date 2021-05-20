@@ -16,7 +16,7 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         Application.targetFrameRate = 60;
-        Utility.AddSceneIfNotLoaded("Character Customization"); //Character Customization
+        Utility.AddSceneIfNotLoaded("Plain"); //Character Customization
     }
     
 }

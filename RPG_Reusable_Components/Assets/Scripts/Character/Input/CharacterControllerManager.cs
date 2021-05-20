@@ -19,8 +19,6 @@ public class CharacterControllerManager : MonoBehaviour, ICharacterInput
         float xInput = Input.GetAxis("Horizontal");
         float yInput = Input.GetAxis("Vertical");
         
-        //Debug.Log("Input: " + xInput + ", " + yInput);
-        
         bool pressingForwards = yInput >= 0.5f;
         bool pressingBackwards = yInput <= -0.5f;
 

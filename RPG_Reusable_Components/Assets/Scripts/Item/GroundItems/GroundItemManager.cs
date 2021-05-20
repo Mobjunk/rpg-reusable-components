@@ -146,10 +146,12 @@ public class GroundItemManager : Singleton<GroundItemManager>
         Destroy(gObject.GetComponent<ItemInformation>());
         
         //Removes the female part of the item
-        if (groundItem.item.fantasyId != -1)
-        {
-            GameObject female = gObject.transform.GetChild(0).gameObject;
-            Destroy(female);
-        }
+        if (groundItem.item.GetType() != typeof(EquipableItemData)) return;
+        
+        EquipableItemData equipment = (EquipableItemData) groundItem.item;
+        if (equipment == null || equipment.fantasyId == -1) return;
+
+        GameObject female = gObject.transform.GetChild(0).gameObject;
+        Destroy(female);
     }
 }

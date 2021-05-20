@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(ICharacterInput), typeof(CharacterMovementManager), typeof(CharacterInteractionManager))]
 public class Player : CharacterManager
@@ -22,14 +23,48 @@ public class Player : CharacterManager
         get => username;
         set => username = value;
     }
-    
+
+    private Npc npcInteracting;
+
+
+    public void SetInteraction(Npc npc)
+    {
+        npcInteracting = npc;
+    }
+
+    public Npc GetInteraction()
+    {
+        return npcInteracting;
+    }
+
+    /// <summary>
+    /// The GameObject of the item the player selected
+    /// </summary>
+    public GameObject selectedItem { get; set; }
+
+    /// <summary>
+    /// Handles resetting the item the player selected
+    /// </summary>
+    public void ResetSelected()
+    {
+        //Checks if there is no selected item
+        if (selectedItem == null) return;
+        //Grabs the slot object, canvas and image object from the selected item
+        var selectedCanvas = selectedItem.transform.GetChild(0).gameObject;
+        var selectedImage = selectedCanvas.transform.GetChild(0).gameObject;
+        //Grabs the outline of the already selected item
+        var selectedOutline = selectedImage.GetComponent<Outline>();
+        //Sets the outline to false
+        selectedOutline.enabled = false;
+    }
+
     public override void Awake()
     {
         base.Awake();
         
         characterInputManager = GetComponent<ICharacterInput>();
         characterMovementManager = GetComponent<CharacterMovementManager>();
-        //characterMovementManager.enabled = false;
+        characterMovementManager.enabled = false;
         characterInteractionManager = GetComponent<CharacterInteractionManager>();
     }
 
@@ -49,21 +84,18 @@ public class Player : CharacterManager
             }
         }
 
-        if (controllerConnected && characterInputManager.GetType() != typeof(CharacterControllerManager))
-        {
-            Destroy(GetComponent<CharacterKeyboardManager>());
-            characterInputManager = gameObject.AddComponent<CharacterControllerManager>();
-
-            SubscribeToInput();
-        } else if (!controllerConnected && characterInputManager.GetType() != typeof(CharacterKeyboardManager))
-        {
-            Destroy(GetComponent<CharacterControllerManager>());
-            characterInputManager = gameObject.AddComponent<CharacterKeyboardManager>();
-
-            SubscribeToInput();
-        }
+        if (controllerConnected && characterInputManager.GetType() != typeof(CharacterControllerManager)) UpdateInput<CharacterKeyboardManager, CharacterControllerManager>();
+        else if (!controllerConnected && characterInputManager.GetType() != typeof(CharacterKeyboardManager)) UpdateInput<CharacterControllerManager, CharacterKeyboardManager>();
     }
 
+    public void UpdateInput<T, Y>() where T : MonoBehaviour, ICharacterInput where Y : MonoBehaviour, ICharacterInput
+    {
+        Destroy(GetComponent<T>());
+        characterInputManager = gameObject.AddComponent<Y>();
+
+        SubscribeToInput();
+    }
+    
     public override void Start()
     {
         base.Start();
@@ -73,8 +105,9 @@ public class Player : CharacterManager
 
     public void OnCompletion()
     {
-        //characterMovementManager.enabled = true;
+        if(inventoryManager == null) Debug.Log("21312321312321312321321321321");
         CharacterInventory = new CharacterContainer(inventoryManager, 28);
+        characterMovementManager.enabled = true;
     }
 
     void SubscribeToInput()

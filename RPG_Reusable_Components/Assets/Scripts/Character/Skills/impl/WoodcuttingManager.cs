@@ -45,7 +45,7 @@ public class WoodcuttingManager : HarvestSkillManager
 
     public override void ReceiveItem()
     {
-        CharacterManager.GetChararacterInventory().Add(1);
+        CharacterManager.GetChararacterInventory().Add(ItemManager.Instance().ForName("Logs"));
         ObjectManager.Instance().ReplaceGameObject(interactedObject, objectData.secondaryObject, 5);
         CharacterManager.SetAction(null);
     }
