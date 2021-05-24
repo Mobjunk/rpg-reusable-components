@@ -3,14 +3,14 @@ using UnityEngine.EventSystems;
 
 public class DragSlot : MonoBehaviour, IDropHandler
 {
-    private CharacterManager characterManager;
+    //private CharacterManager characterManager;
     
     [SerializeField] private GameObject parent;
     [SerializeField] private bool allowDrag = true;
     
     private void Start()
     {
-        characterManager = GameObject.Find("Character").GetComponent<CharacterManager>();
+        //characterManager = GameObject.Find("Character").GetComponent<CharacterManager>();
         parent = transform.parent.gameObject;
     }
 
@@ -44,7 +44,7 @@ public class DragSlot : MonoBehaviour, IDropHandler
         if (fromSlot != toSlot)
         {
             Debug.Log($"[DEBUG] Move Items - fromSlot: {fromSlot}, toSlot: {toSlot}, start: {drag.parent.name}, release: {parent.name}");
-            if (drag.parent.name.Equals(parent.name) && parent.name.StartsWith("Inventory")) characterManager.CharacterInventory.Swap(fromSlot, toSlot);
+            //if (drag.parent.name.Equals(parent.name) && parent.name.StartsWith("Inventory")) characterManager.CharacterInventory.Swap(fromSlot, toSlot);
         }
     }
 }

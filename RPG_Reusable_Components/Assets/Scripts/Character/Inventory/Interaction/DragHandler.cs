@@ -12,10 +12,10 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public GameObject parent;
     public GameObject slot;
-      CanvasGroup canvasGroup;
+    private CanvasGroup canvasGroup;
     private Canvas canvas;
-    [SerializeField] private Vector3 startPosition;
-    [SerializeField] private Transform startParent;
+    private Vector3 startPosition;
+    private Transform startParent;
     [SerializeField] private bool enableDrag = true;
 
     public void Start()
@@ -74,7 +74,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         canvas.overrideSorting = false;
         //Sets the sorting order layer to 1
         canvas.sortingOrder = 1;
-
+        
         //Sets the position back of the item
         if (transform.parent == startParent)
             transform.position = startPosition;

@@ -7,10 +7,10 @@ public class AxeTrunkManager : ObjectInteractionManager
     public override void OnInteraction(CharacterManager characterManager)
     {
         base.OnInteraction(characterManager);
-        if (!characterManager.GetChararacterInventory().Contains(0))
+        if (!characterManager.Inventory.HasItem(ItemManager.Instance().ForName("Logs")))
         {
             ChatManager.Instance().AddMessage("You take the axe out of the stump.");
-            characterManager.GetChararacterInventory().Add(ItemManager.Instance().ForName("Axe"));
+            characterManager.Inventory.AddItem(ItemManager.Instance().ForName("Axe"));
         } else ChatManager.Instance().AddMessage("You already have a axe, don't be greedy.");
     }
 }

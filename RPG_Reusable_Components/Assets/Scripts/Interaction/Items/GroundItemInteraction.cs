@@ -11,7 +11,7 @@ public class GroundItemInteraction : InteractionManager
         Debug.Log("Ground Item interaction debug...");
         GroundItemData groundItem = groundItemManager.ForGameObject(gameObject);
 
-        characterManager.GetChararacterInventory().Add(groundItem.item.itemData, groundItem.item.amount);
+        characterManager.Inventory.AddItem(groundItem.item.itemData, groundItem.item.amount);
         groundItemManager.Remove(gameObject);
     }
 }

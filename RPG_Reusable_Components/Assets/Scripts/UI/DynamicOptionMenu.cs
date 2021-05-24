@@ -145,10 +145,10 @@ public class DynamicOptionMenu : Singleton<DynamicOptionMenu>
 
         switch(menuType)
         {
-            //Checks if the menu type equals player
             case MenuType.PLAYER:
                 break;
-            //Check if the menu type equals item
+            case MenuType.NPC:
+                break;
             case MenuType.ITEM:
                 break;
             case MenuType.GAMEOBJECT:

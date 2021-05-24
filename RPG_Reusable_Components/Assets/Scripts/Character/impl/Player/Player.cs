@@ -5,18 +5,12 @@ using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(ICharacterInput), typeof(CharacterMovementManager), typeof(CharacterInteractionManager))]
+[RequireComponent(typeof(PlayerInventory), typeof(PlayerInvenotryUIManager))]
 public class Player : CharacterManager
 {
     [SerializeField] private CharacterMovementManager characterMovementManager;
     [SerializeField] private CharacterInteractionManager characterInteractionManager;
     [SerializeField] private string username;
-    [SerializeField] private ContainerManager inventoryManager;
-
-    public ContainerManager InventoryManager
-    {
-        get => inventoryManager;
-        set => inventoryManager = value;
-    }
 
     public string Username
     {
@@ -66,6 +60,7 @@ public class Player : CharacterManager
         characterMovementManager = GetComponent<CharacterMovementManager>();
         characterMovementManager.enabled = false;
         characterInteractionManager = GetComponent<CharacterInteractionManager>();
+        Inventory = GetComponent<PlayerInventory>();
     }
 
     public override void Update()
@@ -101,12 +96,11 @@ public class Player : CharacterManager
         base.Start();
 
         SubscribeToInput();
+        GetComponent<PlayerInvenotryUIManager>().Initialize(Inventory);
     }
 
     public void OnCompletion()
     {
-        if(inventoryManager == null) Debug.Log("21312321312321312321321321321");
-        CharacterInventory = new CharacterContainer(inventoryManager, 28);
         characterMovementManager.enabled = true;
     }
 

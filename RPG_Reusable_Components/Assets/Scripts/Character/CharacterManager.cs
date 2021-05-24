@@ -9,24 +9,18 @@ public class CharacterManager : MonoBehaviour
     [SerializeField] private CharacterAttackManager characterAttackManager;
     [SerializeField] private CharacterStateManager characterStateManager;
     
+    [SerializeField] private CharacterInventory inventory;
+    public CharacterInventory Inventory
+    {
+        get => inventory;
+        set => inventory = value;
+    }
+    
     public CharacterEquipmentManager characterEquipmentManager;
 
     public CharacterEquipmentManager GetCharacterEquipmentManager()
     {
         return characterEquipmentManager;
-    }
-
-    [SerializeField] private CharacterContainer characterInventory;
-
-    public CharacterContainer CharacterInventory
-    {
-        get => characterInventory;
-        set => characterInventory = value;
-    }
-
-    public CharacterContainer GetChararacterInventory()
-    {
-        return characterInventory;
     }
 
     private CharacterAction characterAction;
@@ -48,10 +42,6 @@ public class CharacterManager : MonoBehaviour
         if (GetType() == typeof(Player))
         {
             //characterInputManager.OnCharacterAttack = characterAttackManager.Attack;
-        }
-        else
-        {
-            characterInventory = new CharacterContainer(null, 28);
         }
     }
 

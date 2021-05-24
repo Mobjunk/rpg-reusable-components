@@ -331,16 +331,6 @@
             </e>
             <e p="CharacterInteractionManager.cs" t="Include" />
             <e p="CharacterManager.cs" t="Include" />
-            <e p="Container" t="Include">
-              <e p="CharacterContainer.cs" t="Include" />
-              <e p="ContainerManager.cs" t="Include" />
-              <e p="ContainerSlot.cs" t="Include" />
-              <e p="Interaction" t="Include">
-                <e p="CurrentDrag.cs" t="Include" />
-                <e p="DragHandler.cs" t="Include" />
-                <e p="DragSlot.cs" t="Include" />
-              </e>
-            </e>
             <e p="Design" t="Include">
               <e p="CharacterArmatureManager.cs" t="Include" />
               <e p="CharacterDesignManager.cs" t="Include" />
@@ -355,12 +345,35 @@
               </e>
               <e p="Player" t="Include">
                 <e p="Player.cs" t="Include" />
+                <e p="PlayerInvenotryUIManager.cs" t="Include" />
+                <e p="PlayerInventory.cs" t="Include" />
               </e>
             </e>
             <e p="Input" t="Include">
               <e p="CharacterControllerManager.cs" t="Include" />
               <e p="CharacterKeyboardManager.cs" t="Include" />
               <e p="ICharacterInput.cs" t="Include" />
+            </e>
+            <e p="Inventory" t="Include">
+              <e p="AbstractInventoryUIManger.cs" t="Include" />
+              <e p="AbstractItemContainer.cs" t="Include" />
+              <e p="AbstractItemInventory.cs" t="Include" />
+              <e p="CharacterInventory.cs" t="Include" />
+              <e p="Interaction" t="Include">
+                <e p="CurrentDrag.cs" t="Include" />
+                <e p="DragHandler.cs" t="Include" />
+                <e p="DragSlot.cs" t="Include" />
+              </e>
+              <e p="ItemContainerGrid.cs" t="Include" />
+              <e p="ShopS" t="Include">
+                <e p="ShopInventory.cs" t="Include" />
+                <e p="ShopStock.cs" t="Include" />
+                <e p="UI" t="Include">
+                  <e p="ShopOpenerManager.cs" t="Include" />
+                  <e p="ShopUIManager.cs" t="Include" />
+                </e>
+              </e>
+              <e p="UIContainerBase.cs" t="Include" />
             </e>
             <e p="Movement" t="Include">
               <e p="CharacterMovementManager.cs" t="Include" />
@@ -418,6 +431,7 @@
             </e>
           </e>
           <e p="ObjectManager.cs" t="Include" />
+          <e p="TestScript.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="ButtonHover.cs" t="Include" />
             <e p="ButtonManager.cs" t="Include" />

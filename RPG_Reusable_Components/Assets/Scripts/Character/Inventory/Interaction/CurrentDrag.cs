@@ -3,19 +3,6 @@ using UnityEngine;
 
 public class CurrentDrag : Singleton<CurrentDrag>
 {
-    private CharacterManager characterManager;
-    
-    [SerializeField] private ContainerManager inventoryManager;
-
-    private void Awake()
-    {
-        //TODO: Find a better way of doing this...
-        characterManager = GameObject.Find("Character").GetComponent<CharacterManager>();
-        Player player = (Player) characterManager;
-        player.InventoryManager = inventoryManager;
-        player.OnCompletion();
-    }
-
     DragHandler currentDragHangler;
 
     /// <summary>

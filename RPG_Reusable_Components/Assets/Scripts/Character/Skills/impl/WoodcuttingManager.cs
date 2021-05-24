@@ -35,7 +35,7 @@ public class WoodcuttingManager : HarvestSkillManager
 
     public override bool HasRequirements()
     {
-        if (!CharacterManager.GetChararacterInventory().Contains(0))
+        if (!CharacterManager.Inventory.HasItem(ItemManager.Instance().ForName("Axe")))
         {
             ChatManager.Instance().AddMessage("You need an axe to chop this tree.");
             return false;
@@ -45,7 +45,7 @@ public class WoodcuttingManager : HarvestSkillManager
 
     public override void ReceiveItem()
     {
-        CharacterManager.GetChararacterInventory().Add(ItemManager.Instance().ForName("Logs"));
+        CharacterManager.Inventory.AddItem(ItemManager.Instance().ForName("Logs"));
         ObjectManager.Instance().ReplaceGameObject(interactedObject, objectData.secondaryObject, 5);
         CharacterManager.SetAction(null);
     }
