@@ -9,21 +9,47 @@ public abstract class UIContainerbase<T> : MonoBehaviour, IPointerClickHandler
 {
     private DynamicOptionMenu dynamicMenu => DynamicOptionMenu.Instance();
     
+    /// <summary>
+    /// The containment
+    /// </summary>
     [SerializeReference] protected T containment;
-    protected Image containmentVisual;
-    protected Text containmentValue;
-    protected int containmentSlot;
-    protected string[] containmentOptions;
-    protected string containtmentName;
 
     public T Containment => containment;
+    
+    /// <summary>
+    /// Image of the containment
+    /// </summary>
+    protected Image containmentVisual;
+    
     public Image ContainmentVisual => containmentVisual;
+    
+    /// <summary>
+    /// Text value of the containment
+    /// </summary>
+    protected Text containmentValue;
+    
     public Text ContainmentValue => containmentValue;
+    
+    /// <summary>
+    /// The slot id of the containment
+    /// </summary>
+    protected int containmentSlot;
+    
+    /// <summary>
+    /// Containment options
+    /// </summary>
+    protected string[] containmentOptions;
+    
     public string[] ContainmentOptions
     {
         get => containmentOptions;
         set => containmentOptions = value;
     }
+    
+    /// <summary>
+    /// Name of the containment
+    /// </summary>
+    protected string containtmentName;
 
     public string ContaintmentName
     {
@@ -48,7 +74,10 @@ public abstract class UIContainerbase<T> : MonoBehaviour, IPointerClickHandler
         var sprite = canvas.GetChild(0);
         var textComp = sprite.GetChild(0);
         containmentVisual = sprite.GetComponent<Image>();
+        if(containmentVisual == null) Debug.Log("containmentVisual is null");
         containmentValue = textComp.GetComponent<Text>();
+        if(containmentValue == null) Debug.Log("containmentValue is null");
+        Debug.Assert(containmentValue != null);
     }
 
     private void Start()

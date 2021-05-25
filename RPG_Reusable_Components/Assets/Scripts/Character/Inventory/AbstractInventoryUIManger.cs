@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class AbstractInventoryUIManger<T> : Singleton<T> where T : MonoBehaviour
 {
+    public List<AbstractItemContainer> containers = new List<AbstractItemContainer>();
+    
     private AbstractItemInventory containmentContainer;
     public AbstractItemInventory ContainmentContainer
     {
@@ -38,13 +40,18 @@ public abstract class AbstractInventoryUIManger<T> : Singleton<T> where T : Mono
 
     public virtual void SetupContainer()
     {
+        Debug.Log("ContainmentContainer.items.Length: " + ContainmentContainer.items.Length);
         //Handles setting up the container
         for (int index = 0; index < ContainmentContainer.items.Length; index++)
         {
             GameObject containment = Instantiate(ContainmentPrefab, InventoryContainer, true);
             containment.name = $"{index}";
+            containment.transform.localScale = new Vector3(1, 1, 1);
 
-            containment.GetComponent<AbstractItemContainer>().SetContainment(ContainmentContainer.items[index]);
+            AbstractItemContainer container = containment.GetComponent<AbstractItemContainer>();
+            
+            container.SetContainment(ContainmentContainer.items[index]);
+            containers.Add(container);
         }
     }
 }

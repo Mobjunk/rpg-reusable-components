@@ -11,6 +11,8 @@ public abstract class AbstractItemContainer : UIContainerbase<ItemData>
 
     protected virtual void UpdateItemContainer()
     {
+        if (ContainmentVisual == null) return;
+        
         if (Containment == null || Containment.itemData == null)
         {
             ContainmentVisual.enabled = false;
@@ -18,7 +20,6 @@ public abstract class AbstractItemContainer : UIContainerbase<ItemData>
             return;
         }
 
-        
         ContainmentVisual.sprite = Containment.itemData.uiSprite;
         ContainmentVisual.enabled = true;
         
