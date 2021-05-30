@@ -399,6 +399,9 @@
             <e p="Items" t="Include">
               <e p="GroundItemInteraction.cs" t="Include" />
             </e>
+            <e p="Npcs" t="Include">
+              <e p="ShopInteraction.cs" t="Include" />
+            </e>
             <e p="Objects" t="Include">
               <e p="impl" t="Include">
                 <e p="AxeTrunkManager.cs" t="Include" />
@@ -408,6 +411,7 @@
               <e p="ObjectInteractionManager.cs" t="Include" />
             </e>
           </e>
+          <e p="InteractionMenuManager.cs" t="Include" />
           <e p="Item" t="Include">
             <e p="AbstractItemData.cs" t="Include" />
             <e p="Consumables" t="Include">

@@ -14,7 +14,6 @@ public class MinimapManager : MonoBehaviour
     private void Awake()
     {
         miniMapCamera = GetComponent<Camera>();
-        playerTranform = GameObject.Find("Character").transform;
     }
 
     private void Update()

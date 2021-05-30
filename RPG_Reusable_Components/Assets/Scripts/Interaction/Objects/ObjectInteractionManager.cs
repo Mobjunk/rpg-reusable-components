@@ -4,6 +4,8 @@ public class ObjectInteractionManager : InteractionManager
 {
     [SerializeField] private ObjectData objectData;
 
+    public ObjectData ObjectData => objectData;
+
     public ObjectData GetObjectData()
     {
         return objectData;

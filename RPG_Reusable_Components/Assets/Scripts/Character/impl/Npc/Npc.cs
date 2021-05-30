@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Npc : CharacterManager
 {
+    private InteractionMenuManager interactionMenu => InteractionMenuManager.Instance();
+    
     [SerializeField] public NpcData npcData;
     
     public NpcData GetNpcData()
@@ -22,15 +24,5 @@ public class Npc : CharacterManager
         if (npcData.items.Count > 0)
             foreach (int itemId in npcData.items)
                 characterEquipmentManager.EquipItem(itemId);
-    }
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.name.Equals("Character")) other.GetComponent<Player>().SetInteraction(this);
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.name.Equals("Character")) other.GetComponent<Player>().SetInteraction(null);
     }
 }

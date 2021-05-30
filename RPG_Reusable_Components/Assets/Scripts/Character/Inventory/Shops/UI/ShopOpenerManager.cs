@@ -17,10 +17,22 @@ public class ShopOpenerManager : MonoBehaviour
         
         shopUIManager.Open();
         shopUIManager.Initialize(shopInventory, playerInventory);
+
+        if (characterManager.GetType() == typeof(Player))
+        {
+            Player player = (Player) characterManager;
+            player.DisableMovement();
+        }
     }
 
     private void CloseShop(CharacterManager characterManager)
     {
         shopUIManager.Close();
+
+        if (characterManager.GetType() == typeof(Player))
+        {
+            Player player = (Player) characterManager;
+            player.EnableMovement();
+        }
     }
 }
