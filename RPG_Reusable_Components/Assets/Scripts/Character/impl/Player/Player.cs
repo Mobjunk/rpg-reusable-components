@@ -18,6 +18,19 @@ public class Player : CharacterManager
         set => username = value;
     }
 
+    private Npc npcInteracting;
+
+
+    public void SetInteraction(Npc npc)
+    {
+        npcInteracting = npc;
+    }
+
+    public Npc GetInteraction()
+    {
+        return npcInteracting;
+    }
+
     /// <summary>
     /// The GameObject of the item the player selected
     /// </summary>
@@ -95,15 +108,5 @@ public class Player : CharacterManager
     {
         characterInputManager.OnCharacterMovement += characterMovementManager.Move;
         characterInputManager.OnCharacterInteraction += characterInteractionManager.OnCharacterInteraction;
-    }
-
-    public void DisableMovement()
-    {
-        characterInputManager.OnCharacterMovement -= characterMovementManager.Move;
-    }
-
-    public void EnableMovement()
-    {
-        characterInputManager.OnCharacterMovement += characterMovementManager.Move;
     }
 }

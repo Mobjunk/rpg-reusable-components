@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4983ea995bef6214484536ca7c266011, type: 3}
   m_Name: Axe Trunk
   m_EditorClassIdentifier: 
-  interactionMessage: Press F to take the axe
+  interactionMessage: take the axe
   secondaryObject: {fileID: 0}

@@ -27,6 +27,6 @@ public class ShopUIManager : AbstractInventoryUIManger<ShopUIManager>
 
     private void OnInventoryChanged()
     {
-        Initialize(ContainmentContainer, null, true);
+        Initialize(ContainmentContainer, true);
     }
 }
