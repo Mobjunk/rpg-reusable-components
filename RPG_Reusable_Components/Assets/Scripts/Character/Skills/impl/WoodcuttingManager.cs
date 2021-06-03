@@ -35,7 +35,7 @@ public class WoodcuttingManager : HarvestSkillManager
 
     public override bool HasRequirements()
     {
-        if (!CharacterManager.Inventory.HasItem(ItemManager.Instance().ForName("Axe")))
+        if (!CharacterManager.Inventory.HasItem(ItemManager.Instance().ForName("Axe")) && CharacterManager.GetCharacterEquipmentManager().GetEquipmentSlots()[(int)EquipmentSlots.mainhand - 1].itemId != EquipmentId())
         {
             ChatManager.Instance().AddMessage("You need an axe to chop this tree.");
             return false;
@@ -48,6 +48,7 @@ public class WoodcuttingManager : HarvestSkillManager
         CharacterManager.Inventory.AddItem(ItemManager.Instance().ForName("Logs"));
         ObjectManager.Instance().ReplaceGameObject(interactedObject, objectData.secondaryObject, 5);
         CharacterManager.SetAction(null);
+        Utility.AddSceneIfNotLoaded("DLC");
     }
 
     public override bool Successful()

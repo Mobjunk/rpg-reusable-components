@@ -15,7 +15,7 @@ public abstract class HarvestSkillManager : CharacterAction
         base.Update();
         
         if(!HasRequirements()) {
-            reset();
+            Reset();
             return;
         }
 
@@ -31,6 +31,10 @@ public abstract class HarvestSkillManager : CharacterAction
     {
         Debug.Log("Start action...");
         base.OnStart();
+        
+        currentMainHand = CharacterManager.GetCharacterEquipmentManager().GetEquipmentSlots()[(int)EquipmentSlots.mainhand - 1].itemId;
+        currentOffHand = CharacterManager.GetCharacterEquipmentManager().GetEquipmentSlots()[(int)EquipmentSlots.offhand - 1].itemId;
+        
         if (!HasRequirements())
         {
             CharacterManager.SetAction(null);
@@ -38,15 +42,13 @@ public abstract class HarvestSkillManager : CharacterAction
         }
 
         StartMessage();
-        currentMainHand = CharacterManager.GetCharacterEquipmentManager().GetEquipmentSlots()[(int)EquipmentSlots.mainhand].itemId;
-        currentOffHand = CharacterManager.GetCharacterEquipmentManager().GetEquipmentSlots()[(int)EquipmentSlots.offhand].itemId;
         CharacterManager.GetCharacterEquipmentManager().EquipItem(EquipmentId());
     }
 
     public override void OnStop()
     {
         base.OnStop();
-        reset();
+        Reset();
     }
 
     public abstract string StartMessage();
@@ -56,7 +58,7 @@ public abstract class HarvestSkillManager : CharacterAction
     public abstract void ReceiveItem();
     public abstract bool Successful();
 
-    public virtual void reset()
+    public virtual void Reset()
     {
         if (EquipmentId() != -1)
         {

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4983ea995bef6214484536ca7c266011, type: 3}
   m_Name: Regular Tree
   m_EditorClassIdentifier: 
-  interactionMessage: chop down the tree
+  interactionMessage: Press F to chop down the tree
   secondaryObject: {fileID: 1049391458610524, guid: 20ad4dcc05c8da3498028560a59c9ae5, type: 3}

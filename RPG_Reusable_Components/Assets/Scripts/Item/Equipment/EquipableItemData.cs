@@ -5,4 +5,13 @@ using UnityEngine;
 public class EquipableItemData : AbstractItemData
 {
     [Header("MedievalFantasy Id")] public int fantasyId;
+    [Header("Attack Type")] public AttackType attackType;
+}
+
+public enum AttackType
+{
+    NONE,
+    MELEE,
+    MAGIC,
+    RANGED
 }

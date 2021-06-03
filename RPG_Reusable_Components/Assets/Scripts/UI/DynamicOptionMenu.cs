@@ -71,6 +71,7 @@ public class DynamicOptionMenu : Singleton<DynamicOptionMenu>
             Close();
             return;
         }
+        
         //Loops though all the options and adds a button for them
         for (int index = 0; index < options.Length; index++)
         {
@@ -86,6 +87,7 @@ public class DynamicOptionMenu : Singleton<DynamicOptionMenu>
             menu_option.name = options[index] + ":" + index;
             //Sets the text component to the correct thing
             textComponent.text = options[index] + " " + name;
+            menu_option.transform.localScale = new Vector3(1, 1, 1);
         }
 
         //Grabs the height of a button
@@ -142,6 +144,7 @@ public class DynamicOptionMenu : Singleton<DynamicOptionMenu>
         int index = int.Parse(name[name.Length - 1].ToString());
 
         Debug.Log($"name: {name}, index: {index}, openedName: {openedName}");
+        string actionName = name.Replace($":{index}", "");
 
         switch(menuType)
         {
@@ -150,6 +153,26 @@ public class DynamicOptionMenu : Singleton<DynamicOptionMenu>
             case MenuType.NPC:
                 break;
             case MenuType.ITEM:
+                switch (actionName)
+                {
+                    case "Wield":
+                        EquipableItemData equipment = (EquipableItemData) ItemManager.Instance().ForName(openedName);
+                        if (equipment == null || equipment.fantasyId == -1)
+                        {
+                            Debug.LogError($"Equipment is null or has no fantasyId.");
+                            return;
+                        }
+                        GameObject character = GameObject.Find("Character");
+                        Player player = character.GetComponent<Player>();
+                        CharacterEquipmentManager equipmentManager = character.GetComponent<CharacterEquipmentManager>();
+                        
+                        player.Inventory.RemoveItem(equipment);
+                        equipmentManager.EquipItem(equipment.fantasyId);
+                        break;
+                    default:
+                        Debug.LogWarning($"This action name {actionName} has no support");
+                        break;
+                }
                 break;
             case MenuType.GAMEOBJECT:
                 break;

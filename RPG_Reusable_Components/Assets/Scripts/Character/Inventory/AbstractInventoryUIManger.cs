@@ -14,14 +14,28 @@ public abstract class AbstractInventoryUIManger<T> : Singleton<T> where T : Mono
     }
 
     [SerializeField] private GameObject containmentPrefab;
-    public GameObject ContainmentPrefab => containmentPrefab;
+
+    public GameObject ContainmentPrefab
+    {
+        get => containmentPrefab;
+        set => containmentPrefab = value;
+    }
     
     [SerializeField] private GameObject inventoryUI;
-    public GameObject InventoryUI => inventoryUI;
+
+    public GameObject InventoryUI
+    {
+        get => inventoryUI;
+        set => inventoryUI = value;
+    }
     
     [SerializeField] private Transform inventoryContainer;
 
-    public Transform InventoryContainer => inventoryContainer;
+    public Transform InventoryContainer
+    {
+        get => inventoryContainer;
+        set => inventoryContainer = value;
+    }
     
     public bool isOpened;
 
@@ -40,6 +54,16 @@ public abstract class AbstractInventoryUIManger<T> : Singleton<T> where T : Mono
 
     public virtual void SetupContainer()
     {
+        if (ContainmentPrefab == null)
+        {
+            Debug.LogError("ContainmentPrefab = null");
+            return;
+        }
+        if (InventoryContainer == null)
+        {
+            Debug.LogError("InventoryContainer = null");
+            return;
+        }
         Debug.Log("ContainmentContainer.items.Length: " + ContainmentContainer.items.Length);
         //Handles setting up the container
         for (int index = 0; index < ContainmentContainer.items.Length; index++)

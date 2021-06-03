@@ -19,6 +19,20 @@ public class ItemManager : Singleton<ItemManager>
         return itemDefinition.FirstOrDefault(itemData => itemData.name.ToLower().Equals(itemName.ToLower()));
     }
 
+    public AbstractItemData ForId(int itemId)
+    {
+        foreach (AbstractItemData itemData in itemDefinition)
+        {
+            EquipableItemData equipmentData = (EquipableItemData) itemData;
+            if (equipmentData != null)
+            {
+                if (equipmentData.fantasyId == itemId) return equipmentData;
+            } else if (itemData.itemId == itemId)
+                return itemData;
+        }
+        return null;
+    }
+
     public ItemInformation LoadItem(CharacterArmatureManager armatureManager, CharacterDesignManager designManager, CharacterEquipmentManager equipmentManager, int itemId) {
         return LoadItem(armatureManager, designManager, equipmentManager, itemId, ItemType.Equipment);
     }

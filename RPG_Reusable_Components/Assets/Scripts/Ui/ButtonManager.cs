@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
@@ -17,6 +18,8 @@ public class ButtonManager : MonoBehaviour
         characterManager = GameObject.Find("Character").GetComponent<CharacterManager>();
         characterDesignManager = characterManager.GetComponent<CharacterDesignManager>();
         characterNameManager = characterManager.GetComponent<CharacterNameManager>();
+        
+        GameManager.Instance().DisableBackgroundImage();
     }
 
     public void SwitchRace(int race)
@@ -71,8 +74,9 @@ public class ButtonManager : MonoBehaviour
         Player player = (Player) characterManager;
         player.Username = currentName;
         
-        characterNameManager.SetNameUI(player.Username);
         Utility.AddSceneIfNotLoaded("Plain");
         Utility.UnloadScene("Character Customization");
+
+        SceneManager.sceneLoaded += player.OnSceneLoaded2;
     }
 }

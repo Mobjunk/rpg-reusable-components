@@ -15,12 +15,11 @@ GameObject:
   - component: {fileID: 2673461429518804098}
   - component: {fileID: 7075014523887949909}
   - component: {fileID: 3492912026616181463}
-  - component: {fileID: 3469865159699294096}
   - component: {fileID: 978157616641408771}
   - component: {fileID: 2576648327503353948}
-  - component: {fileID: 5495997657489462013}
   - component: {fileID: 5343786971155428855}
   - component: {fileID: 1537096858118567297}
+  - component: {fileID: 3941927398129552657}
   m_Layer: 0
   m_Name: Prefab_PlayerCharacter
   m_TagString: Untagged
@@ -76,68 +75,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d72965bea9de74eb48acb30184c780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterInputManager: {fileID: 0}
   characterAttackManager: {fileID: 0}
   characterStateManager: {fileID: 0}
+  inventory: {fileID: 0}
   characterEquipmentManager: {fileID: 0}
-  characterInventory:
-    items:
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
   characterMovementManager: {fileID: 0}
   characterInteractionManager: {fileID: 0}
   username: 
@@ -208,25 +149,6 @@ MonoBehaviour:
   bodyParts: []
   animator: {fileID: 0}
   animatorController: {fileID: 0}
---- !u!114 &3469865159699294096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753403684605794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9be37e8fc6de5a44c833b7262fa8104b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forwards: 119
-  backwards: 115
-  rotateLeft: 97
-  rotateRight: 100
-  run: 304
-  jumping: 32
-  interaction: 102
 --- !u!114 &978157616641408771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,35 +175,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   characterState: 0
---- !u!114 &5495997657489462013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753403684605794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49b7be979447a714b8961bc1031c6c09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterInputs: {x: 0, y: 0}
-  characterVelocity: {x: 0, y: 0, z: 0}
-  characterCurrentSpeed: 0
-  characterWalkSpeed: 2.5
-  characterRunSpeed: 1.5
-  characterIsRunning: 0
-  characterRotation: 0
-  characterRotationSpeed: 1.5
-  pressedJump: 0
-  characterIsJumping: 0
-  verticalVelocity: 0
-  characterVelocityY: 0
-  characterJumpingSpeed: 0
-  characterJumpHeight: 3
-  characterJumpingDirection: {x: 0, y: 0, z: 0}
-  characterGravity: 9.81
-  groundedTimer: 0
 --- !u!114 &5343786971155428855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +201,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionMenu: {fileID: 0}
   interactionManager: {fileID: 0}
+--- !u!114 &3941927398129552657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753403684605794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bafca1f2d050914fa8029299a4a9be6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterInputs: {x: 0, y: 0}
+  characterVelocity: {x: 0, y: 0, z: 0}
+  characterCurrentSpeed: 0
+  characterWalkSpeed: 2.5
+  characterRunSpeed: 1.5
+  characterIsRunning: 0
+  characterRotation: 0
+  characterRotationSpeed: 1
+  characterIsJumping: 0
+  verticalVelocity: 0
+  characterGravity: 9.81
+  groundedTimer: 0
 --- !u!1 &1918111272366092
 GameObject:
   m_ObjectHideFlags: 0

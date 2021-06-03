@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4983ea995bef6214484536ca7c266011, type: 3}
-  m_Name: Axe Trunk
+  m_Name: ShopInteraction
   m_EditorClassIdentifier: 
-  interactionMessage: Press F to take the axe
+  interactionMessage: Press F to open the shop
   secondaryObject: {fileID: 0}

@@ -14,6 +14,11 @@ public class CharacterStateManager : MonoBehaviour
         characterState = state;
     }
 
+    public CharacterStates GetCharacterState()
+    {
+        return characterState;
+    }
+
     private void Start()
     {
         characterManager = GetComponent<CharacterManager>();

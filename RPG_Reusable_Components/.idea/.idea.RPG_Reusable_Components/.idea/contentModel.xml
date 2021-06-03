@@ -328,6 +328,10 @@
             </e>
             <e p="Attack" t="Include">
               <e p="CharacterAttackManager.cs" t="Include" />
+              <e p="DefaultAttack.cs" t="Include" />
+              <e p="impl" t="Include">
+                <e p="MeleeAttack.cs" t="Include" />
+              </e>
             </e>
             <e p="CharacterInteractionManager.cs" t="Include" />
             <e p="CharacterManager.cs" t="Include" />
@@ -407,7 +411,10 @@
               <e p="ObjectData.cs" t="Include" />
               <e p="ObjectInteractionManager.cs" t="Include" />
             </e>
+            <e p="ShopInteraction.cs" t="Include" />
           </e>
+          <e p="InteractionMenuManager.cs" t="Include" />
+          <e p="InterfaceExample.cs" t="Include" />
           <e p="Item" t="Include">
             <e p="AbstractItemData.cs" t="Include" />
             <e p="Consumables" t="Include">
@@ -430,6 +437,7 @@
               <e p="ItemType.cs" t="Include" />
             </e>
           </e>
+          <e p="MainMenuManager.cs" t="Include" />
           <e p="ObjectManager.cs" t="Include" />
           <e p="TestScript.cs" t="Include" />
           <e p="UI" t="Include">

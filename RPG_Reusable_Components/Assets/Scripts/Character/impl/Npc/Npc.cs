@@ -3,6 +3,7 @@ using UnityEngine;
 public class Npc : CharacterManager
 {
     [SerializeField] public NpcData npcData;
+    [SerializeField] private CharacterNameManager characterNameManager;
     
     public NpcData GetNpcData()
     {
@@ -13,6 +14,7 @@ public class Npc : CharacterManager
     {
         base.Awake();
         characterEquipmentManager = GetComponent<CharacterEquipmentManager>();
+        characterNameManager = GetComponent<CharacterNameManager>();
     }
 
     public override void Start()
@@ -22,15 +24,7 @@ public class Npc : CharacterManager
         if (npcData.items.Count > 0)
             foreach (int itemId in npcData.items)
                 characterEquipmentManager.EquipItem(itemId);
-    }
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.name.Equals("Character")) other.GetComponent<Player>().SetInteraction(this);
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.name.Equals("Character")) other.GetComponent<Player>().SetInteraction(null);
+        
+        //characterNameManager.SetNameUI(npcData.name);
     }
 }

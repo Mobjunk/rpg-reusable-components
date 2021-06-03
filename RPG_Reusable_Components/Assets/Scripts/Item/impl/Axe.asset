@@ -24,4 +24,5 @@ MonoBehaviour:
   - Drop
   - Examine
   groundItem: {fileID: 11400000, guid: ba0267d61e414fb40969804218a5abba, type: 2}
-  fantasyId: 151
+  fantasyId: 155
+  attackType: 1

@@ -2,54 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(ICharacterInput), typeof(CharacterMovementManager), typeof(CharacterInteractionManager))]
-[RequireComponent(typeof(PlayerInventory), typeof(PlayerInvenotryUIManager))]
+[RequireComponent(typeof(CharacterAttackManager))]
 public class Player : CharacterManager
 {
     [SerializeField] private CharacterMovementManager characterMovementManager;
     [SerializeField] private CharacterInteractionManager characterInteractionManager;
+    [SerializeField] private CharacterNameManager characterNameManager;
     [SerializeField] private string username;
 
     public string Username
     {
         get => username;
         set => username = value;
-    }
-
-    private Npc npcInteracting;
-
-
-    public void SetInteraction(Npc npc)
-    {
-        npcInteracting = npc;
-    }
-
-    public Npc GetInteraction()
-    {
-        return npcInteracting;
-    }
-
-    /// <summary>
-    /// The GameObject of the item the player selected
-    /// </summary>
-    public GameObject selectedItem { get; set; }
-
-    /// <summary>
-    /// Handles resetting the item the player selected
-    /// </summary>
-    public void ResetSelected()
-    {
-        //Checks if there is no selected item
-        if (selectedItem == null) return;
-        //Grabs the slot object, canvas and image object from the selected item
-        var selectedCanvas = selectedItem.transform.GetChild(0).gameObject;
-        var selectedImage = selectedCanvas.transform.GetChild(0).gameObject;
-        //Grabs the outline of the already selected item
-        var selectedOutline = selectedImage.GetComponent<Outline>();
-        //Sets the outline to false
-        selectedOutline.enabled = false;
     }
 
     public override void Awake()
@@ -60,7 +28,10 @@ public class Player : CharacterManager
         characterMovementManager = GetComponent<CharacterMovementManager>();
         characterMovementManager.enabled = false;
         characterInteractionManager = GetComponent<CharacterInteractionManager>();
-        Inventory = GetComponent<PlayerInventory>();
+        CharacterAttackManager = GetComponent<CharacterAttackManager>();
+        characterNameManager = GetComponent<CharacterNameManager>();
+        
+        characterMovementManager.enabled = false;
     }
 
     public override void Update()
@@ -96,17 +67,35 @@ public class Player : CharacterManager
         base.Start();
 
         SubscribeToInput();
-        GetComponent<PlayerInvenotryUIManager>().Initialize(Inventory);
-    }
-
-    public void OnCompletion()
-    {
-        characterMovementManager.enabled = true;
     }
 
     void SubscribeToInput()
     {
         characterInputManager.OnCharacterMovement += characterMovementManager.Move;
         characterInputManager.OnCharacterInteraction += characterInteractionManager.OnCharacterInteraction;
+        characterInputManager.OnCharacterAttack += CharacterAttackManager.Attack;
+    }
+
+    public void OnSceneLoaded2(Scene scene, LoadSceneMode mode)
+    {
+        characterMovementManager.enabled = true;
+        
+        gameObject.AddComponent<PlayerInventory>();
+        Inventory = GetComponent<PlayerInventory>();
+        
+        var inventoryUIManager = gameObject.AddComponent<PlayerInvenotryUIManager>();
+        inventoryUIManager.Initialize(Inventory);
+        
+        characterNameManager.SetNameUI(Username);
+    }
+
+    public void DisableMovement()
+    {
+        characterInputManager.OnCharacterMovement -= characterMovementManager.Move;
+    }
+
+    public void EnableMovement()
+    {
+        characterInputManager.OnCharacterMovement += characterMovementManager.Move;
     }
 }

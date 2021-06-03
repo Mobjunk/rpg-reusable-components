@@ -1,12 +1,17 @@
 using System;
+using System.Numerics;
 using UnityEngine;
 using static CharacterStateManager;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 public class CharacterMovementManager : MonoBehaviour, IMovement
 {
     private CharacterManager characterManager;
     private CharacterStateManager characterStateManager;
     private CharacterController characterController;
+
+    [HideInInspector] public bool enabled;
 
     [Header("Inputs")]
     [SerializeField] private Vector2 characterInputs;
@@ -38,12 +43,11 @@ public class CharacterMovementManager : MonoBehaviour, IMovement
         characterManager = GetComponent<CharacterManager>();
         characterController = GetComponent<CharacterController>();
         characterStateManager = GetComponent<CharacterStateManager>();
-        //characterController.minMoveDistance = 0f;
     }
 
     public void Move(Vector2 characterInputs, float characterRotation, bool characterIsRunning)
     {
-        if (characterManager.CharacterAction != null && !characterManager.CharacterAction.Interruptable()) return;
+        if (characterManager.CharacterAction != null && !characterManager.CharacterAction.Interruptable() || !enabled) return;
 
         this.characterInputs = characterInputs;
         this.characterRotation = characterRotation;
@@ -77,7 +81,7 @@ public class CharacterMovementManager : MonoBehaviour, IMovement
         if (characterIsJumping) characterState = CharacterStates.JUMPING;
 
         bool updateState = !(characterManager.CharacterAction != null && characterManager.CharacterAction.GetCharacterState() != characterState);
-
+        
         if(updateState) characterStateManager.SetCharacterState(characterState);
         
         //Velocity calculations

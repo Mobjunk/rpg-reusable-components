@@ -6,10 +6,11 @@ using UnityEngine;
 
 public class CharacterInteractionManager : MonoBehaviour
 {
+    private InteractionMenuManager interactionMenu => InteractionMenuManager.Instance();
+    
     private CharacterManager characterManager;
     private Transform[] rayCastPositions = new Transform[3];
 
-    [SerializeField] private GameObject interactionMenu;
     [SerializeField] private InteractionManager interactionManager;
 
     private void Awake()
@@ -21,7 +22,7 @@ public class CharacterInteractionManager : MonoBehaviour
 
     private void Update()
     {
-        interactionMenu.SetActive(false);
+        interactionMenu.SetInteraction(false);
         if (HandleRayCast(rayCastPositions[0])) return;
         if (HandleRayCast(rayCastPositions[1])) return;
         if (HandleRayCast(rayCastPositions[2])) return;
@@ -42,7 +43,16 @@ public class CharacterInteractionManager : MonoBehaviour
             interactionManager = hit.collider.GetComponent<InteractionManager>();
             if (interactionManager != null)
             {
-                interactionMenu.SetActive(true);
+                string message = "";
+                
+                if (interactionManager.GetType().IsSubclassOf(typeof(ObjectInteractionManager)))
+                {
+                    ObjectInteractionManager oManager = (ObjectInteractionManager) interactionManager;
+                    message = oManager.ObjectData.interactionMessage;
+                }
+                
+                if(message.Equals("")) interactionMenu.SetInteraction(true);
+                else interactionMenu.SetInteraction(true, message);
                 return true;
             }
         } else if (!succefullHit || hit.collider == null) interactionManager = null;

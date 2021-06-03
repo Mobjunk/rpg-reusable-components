@@ -7,6 +7,13 @@ public class CharacterManager : MonoBehaviour
 {
     [SerializeField] protected ICharacterInput characterInputManager;
     [SerializeField] private CharacterAttackManager characterAttackManager;
+    
+    public CharacterAttackManager CharacterAttackManager
+    {
+        get => characterAttackManager;
+        set => characterAttackManager = value;
+    }
+    
     [SerializeField] private CharacterStateManager characterStateManager;
     
     [SerializeField] private CharacterInventory inventory;

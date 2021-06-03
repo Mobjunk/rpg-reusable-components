@@ -1833,13 +1833,14 @@ GameObject:
   - component: {fileID: 81463571900011356}
   - component: {fileID: 5049909125123878795}
   - component: {fileID: 1459783474259199241}
-  - component: {fileID: 1449048934255185998}
   - component: {fileID: 3001786066346821853}
   - component: {fileID: 574624215796297602}
-  - component: {fileID: 7529690297968157987}
   - component: {fileID: 7931842104295506473}
   - component: {fileID: 2888894036274951902}
   - component: {fileID: 6195895181001633500}
+  - component: {fileID: 530115501346510463}
+  - component: {fileID: 1537719810193724371}
+  - component: {fileID: 8638666093745117607}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -1902,69 +1903,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d72965bea9de74eb48acb30184c780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterInputManager: {fileID: 3001786066346821853}
   characterAttackManager: {fileID: 7931842104295506473}
   characterStateManager: {fileID: 0}
+  inventory: {fileID: 0}
   characterEquipmentManager: {fileID: 0}
-  characterInventory:
-    items:
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-    - item: {fileID: 0}
-      amount: 0
-  characterMovementManager: {fileID: 7529690297968157987}
+  characterMovementManager: {fileID: 0}
   characterInteractionManager: {fileID: 0}
   username: Nighel
 --- !u!114 &81463571900011356
@@ -2128,25 +2071,6 @@ MonoBehaviour:
   - {fileID: 8162424996789512747}
   animator: {fileID: 5427557659558563039}
   animatorController: {fileID: 9100000, guid: 2c15b8f44347b3a4dab36095c6502fde, type: 2}
---- !u!114 &1449048934255185998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2611343520028817596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9be37e8fc6de5a44c833b7262fa8104b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forwards: 119
-  backwards: 115
-  rotateLeft: 97
-  rotateRight: 100
-  run: 304
-  jumping: 32
-  interaction: 102
 --- !u!114 &3001786066346821853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2173,35 +2097,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 5427557659558563039}
   characterState: 0
---- !u!114 &7529690297968157987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2611343520028817596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49b7be979447a714b8961bc1031c6c09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterInputs: {x: 0, y: 0}
-  characterVelocity: {x: -0, y: -0.4670345, z: 0}
-  characterCurrentSpeed: 2.5
-  characterWalkSpeed: 2.5
-  characterRunSpeed: 1.5
-  characterIsRunning: 0
-  characterRotation: 0
-  characterRotationSpeed: 1
-  pressedJump: 0
-  characterIsJumping: 0
-  verticalVelocity: -0.4670345
-  characterVelocityY: 0
-  characterJumpingSpeed: 0
-  characterJumpHeight: 3
-  characterJumpingDirection: {x: 0, y: 0, z: 0}
-  characterGravity: 9.81
-  groundedTimer: 0.152392
 --- !u!114 &7931842104295506473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2242,6 +2137,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionMenu: {fileID: 0}
   interactionManager: {fileID: 0}
+--- !u!114 &530115501346510463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2611343520028817596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bafca1f2d050914fa8029299a4a9be6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterInputs: {x: 0, y: 0}
+  characterVelocity: {x: 0, y: 0, z: 0}
+  characterCurrentSpeed: 0
+  characterWalkSpeed: 2.5
+  characterRunSpeed: 1.5
+  characterIsRunning: 0
+  characterRotation: 0
+  characterRotationSpeed: 1
+  characterIsJumping: 0
+  verticalVelocity: 0
+  characterGravity: 9.81
+  groundedTimer: 0
+--- !u!114 &1537719810193724371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2611343520028817596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66c918643a3cca44db31eb8d6821e1c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugInventory: 1
+  maxInventorySize: 28
+  stackType: 0
+  items: []
+  goldCoins: 0
+--- !u!114 &8638666093745117607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2611343520028817596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d286d76626567d549af552ec71e50593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  containers: []
+  containmentPrefab: {fileID: 0}
+  inventoryUI: {fileID: 0}
+  inventoryContainer: {fileID: 0}
+  isOpened: 0
 --- !u!1 &2611438168445437906
 GameObject:
   m_ObjectHideFlags: 0

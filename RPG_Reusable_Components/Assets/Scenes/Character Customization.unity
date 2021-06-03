@@ -10681,10 +10681,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f45f4c3fe3e3540b731668a823f472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterInputManager: {fileID: 0}
   characterAttackManager: {fileID: 0}
-  npcData: {fileID: 11400000, guid: 0966e273e23ce6348ba8b22058d2ed66, type: 2}
+  characterStateManager: {fileID: 0}
+  inventory: {fileID: 0}
   characterEquipmentManager: {fileID: 0}
+  npcData: {fileID: 11400000, guid: 0966e273e23ce6348ba8b22058d2ed66, type: 2}
+  characterNameManager: {fileID: 0}
 --- !u!4 &1342880268
 Transform:
   m_ObjectHideFlags: 0
@@ -18426,6 +18428,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8009812625405342374, guid: ecd57a2692a4ffa49950ac04efb82ea7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8009812625682837504, guid: ecd57a2692a4ffa49950ac04efb82ea7, type: 3}
       propertyPath: m_Name
       value: NPC 1
